@@ -9,6 +9,7 @@ namespace MCAT.Entities
         private string lname;
         private int mobileno;
         private int cstatus;
+        private string nic;
         
         
 
@@ -18,5 +19,6 @@ namespace MCAT.Entities
         public string Lname { get => lname; set => lname = value;}
         public int Mobileno { get => mobileno; set => mobileno = value; }
         public int Cstatus { get => cstatus; set => cstatus = value; }
+        public string Nic { get => nic; set => nic = value; }
     }
 }
