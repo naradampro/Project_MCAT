@@ -16,6 +16,7 @@ namespace MCAT.Entities
         public string Address { get => address; set => address = value; }
         public string Fname { get => fname; set => fname = value;}
         public string Lname { get => lname; set => lname = value;}
-
+        public int Mobileno { get => mobileno; set => mobileno = value; }
+        public int Cstatus { get => cstatus; set => cstatus = value; }
     }
 }
