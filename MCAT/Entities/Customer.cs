@@ -8,6 +8,7 @@ namespace MCAT.Entities
         private string fname;
         private string lname;
         private int mobileno;
+        private int cstatus;
         
         
 
