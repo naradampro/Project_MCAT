@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31605.320
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCAT", "MCAT\MCAT.csproj", "{32029019-5C9C-4ACC-9C20-43F48D81758C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCAT", "MCAT\MCAT.csproj", "{5CEC90DB-4C08-409A-B851-E269AFF564AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{32029019-5C9C-4ACC-9C20-43F48D81758C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32029019-5C9C-4ACC-9C20-43F48D81758C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32029019-5C9C-4ACC-9C20-43F48D81758C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32029019-5C9C-4ACC-9C20-43F48D81758C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CEC90DB-4C08-409A-B851-E269AFF564AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CEC90DB-4C08-409A-B851-E269AFF564AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CEC90DB-4C08-409A-B851-E269AFF564AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CEC90DB-4C08-409A-B851-E269AFF564AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3DBD840A-012A-4E7F-B6A1-1A7293B8A07B}
+		SolutionGuid = {77BDEDAE-7337-46CE-842F-A5F1036E8944}
 	EndGlobalSection
 EndGlobal
