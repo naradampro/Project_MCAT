@@ -3,8 +3,42 @@ namespace MCAT.Entities
 {
     class Vehicle
     {
-        private int id;
+        //Vehicle ID
+        private int vid;
 
-        public int Id { get => id; set => id = value; }
+        //Vehicle Category ID
+        private int catid;
+
+        //Vehicle Register Number
+        private int vregno;
+
+        //Fuel Type of the vehicle
+        private string fuelType;
+
+        //Vehicle Last Service Date
+        private string lsdate;
+
+        //Vehicle Next Service Date
+        private string nsdate;
+
+        //Vehicle Status
+        private string acsatus;
+
+        //Description
+        private string description;
+
+        //Status
+        private int vstatus;
+
+        public int Vid { get => vid; set => vid = value; }
+        public int Catid { get => catid; set => catid = value; }
+        public int Vregno { get => vregno; set => vregno = value; }
+        public string FuelType { get => fuelType; set => fuelType = value; }
+        public string Lsdate { get => lsdate; set => lsdate = value; }
+        public string Nsdate { get => nsdate; set => nsdate = value; }
+        public string Acsatus { get => acsatus; set => acsatus = value; }
+        public string Description { get => description; set => description = value; }
+        public int Vstatus { get => vstatus; set => vstatus = value; }
+        
     }
 }
