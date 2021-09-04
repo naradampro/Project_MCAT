@@ -18,7 +18,7 @@ namespace MCAT.Entities
         private int avaivehicles;
 
         //Vehicle caetegory name
-        private String Catname;
+        private String catname;
 
         //Cost per 1km
         private Double costonekm;
@@ -29,7 +29,7 @@ namespace MCAT.Entities
         public int Id { get => id; set => id = value; }
         public int Pcapacity { get => pcapacity; set => pcapacity = value; }
         public int Avaivehicles { get => avaivehicles; set => avaivehicles = value; }
-        public string Catname1 { get => Catname; set => Catname = value; }
+        public string Catname { get => catname; set => catname = value; }
         public double Costonekm { get => costonekm; set => costonekm = value; }
         public double Costoneday { get => costoneday; set => costoneday = value; }
     }

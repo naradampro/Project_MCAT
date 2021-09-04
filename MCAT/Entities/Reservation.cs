@@ -49,6 +49,5 @@ namespace MCAT.Entities
         public double Distance { get => distance; set => distance = value; }
         public string Description { get => description; set => description = value; }
         public int Rstatus { get => rstatus; set => rstatus = value; }
-
     }
 }

@@ -3,6 +3,7 @@ namespace MCAT.Entities
 {
     class Vehicle
     {
+
         //Vehicle ID
         private int id;
 
@@ -39,6 +40,6 @@ namespace MCAT.Entities
         public string Acsatus { get => acsatus; set => acsatus = value; }
         public string Description { get => description; set => description = value; }
         public int Vstatus { get => vstatus; set => vstatus = value; }
-        
     }
+       
 }
