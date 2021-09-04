@@ -3,12 +3,25 @@ namespace MCAT.Entities
 {
     class Customer
     {
+        //Customer ID
         private int cid;
+
+        //Customer Address
         private string address;
+
+        //Customer First Name
         private string fname;
+
+        //Customer Last Name
         private string lname;
+
+        //Customer Mobile Number
         private int mobileno;
+
+        //Customer Status
         private int cstatus;
+
+        //Customer NIC
         private string nic;
         
         
