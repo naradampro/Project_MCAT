@@ -39,13 +39,13 @@ namespace MCAT
                     PageView.Content = new UIs.Customers();
                     break;
                 case 2:
-                    PageView.Background = Brushes.CadetBlue;
+                    PageView.Content = new UIs.Drivers();
                     break;
                 case 3:
-                    PageView.Background = Brushes.DarkBlue;
+                    PageView.Content = new UIs.Reservations();
                     break;
                 case 4:
-                    PageView.Background = Brushes.Firebrick;
+                    PageView.Content = new UIs.Vehicles();
                     break;
                 case 5:
                     PageView.Content = new UIs.VCategory();
