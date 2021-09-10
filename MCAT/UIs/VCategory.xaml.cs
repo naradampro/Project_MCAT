@@ -25,7 +25,11 @@ namespace MCAT.UIs
         public VCategory()
         {
             InitializeComponent();
-            this.DataContext = cont.GetById(5);
+            foreach (var record in cont.GetAll())
+            {
+                DataGridVcat.Items.Add(record);
+            }
+
         }
     }
 }
