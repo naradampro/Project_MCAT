@@ -1,11 +1,11 @@
 ﻿<Page x:Class="MCAT.UIs.VCategory"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:MCAT.UIs"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="1250"
+      Height="650" Width="1250"
       Title="VCategory">
     <Grid Background="white">
         <Grid.RowDefinitions>
@@ -41,7 +41,6 @@
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
                 Content="Add a Category" Margin="1016,54,20,44"
                 Width="200"
-                Grid.Row="0"
                 />
 
     </Grid>
