@@ -39,10 +39,10 @@ namespace MCAT
                     PageView.Content = new UIs.Customers();
                     break;
                 case 2:
-                    PageView.Content = new UIs.Drivers();
+                    PageView.Content = new UIs.Reservations();
                     break;
                 case 3:
-                    PageView.Content = new UIs.Reservations();
+                    PageView.Content = new UIs.Drivers();
                     break;
                 case 4:
                     PageView.Content = new UIs.Vehicles();
