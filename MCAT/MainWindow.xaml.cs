@@ -23,6 +23,35 @@ namespace MCAT
         public MainWindow()
         {
             InitializeComponent();
+            PageView.Content = new UIs.Dashboard();
         }
+
+        private void Navigate(object sender, RoutedEventArgs e)
+        {
+            int index = int.Parse(((RadioButton)e.Source).Uid);
+
+            switch (index)
+            {
+                case 0:
+                    PageView.Content = new UIs.Dashboard();
+                    break;
+                case 1:
+                    PageView.Content = new UIs.Customers();
+                    break;
+                case 2:
+                    PageView.Background = Brushes.CadetBlue;
+                    break;
+                case 3:
+                    PageView.Background = Brushes.DarkBlue;
+                    break;
+                case 4:
+                    PageView.Background = Brushes.Firebrick;
+                    break;
+                case 5:
+                    PageView.Content = new UIs.VCategory();
+                    break;
+            }
+        }
+
     }
 }
