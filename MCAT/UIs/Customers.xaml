@@ -19,28 +19,15 @@
                 <DataGridTextColumn Header="Customer ID" Binding="{Binding Id}" Width="100"/>
                 <DataGridTextColumn Header="First Name" Binding="{Binding Fname}" Width="150"/>
                 <DataGridTextColumn Header="Last Name" Binding="{Binding Lname}" Width="150"/>
-                <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
-                <DataGridTextColumn Header="Mobile Number" Binding="{Binding Mobileno}"/>
-                <DataGridTextColumn Header="NIC" Binding="{Binding Nic}"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="300"/>
+                <DataGridTextColumn Header="Mobile Number" Binding="{Binding Mobileno}" Width="100"/>
+                <DataGridTextColumn Header="NIC" Binding="{Binding Nic}" Width="100"/>
                 <DataGridTextColumn Header="Options" Width="*"/>
             </DataGrid.Columns>
 
-            <!-- Styling -->
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="FontSize" Value="16"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                </Style>
-
-                <Style TargetType="{x:Type DataGridCell}">
-                    <Setter Property="FontSize" Value="16"/>
-                </Style>
-            </DataGrid.Resources>
         </DataGrid>
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                Content="Add a Customer" Margin="1016,54,20,44"
+                Content="Add a new Customer" Margin="1016,54,20,44"
                 Width="200"
                 />
 
