@@ -8,7 +8,21 @@
       Height="650" Width="1250"
       Title="Drivers">
 
-    <Grid Background="White">
-        <Label Content="Drivers" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+    <Grid Background="white">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DataGridDrivers" Grid.Row="1" Margin="20,20,20,20" IsReadOnly="True" CanUserAddRows="False" ColumnHeaderHeight="40" HeadersVisibility="Column">
+            <DataGrid.BindingGroup>
+                <BindingGroup/>
+            </DataGrid.BindingGroup>
+
+        </DataGrid>
+        <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                Content="Add a new Driver" Margin="1016,54,20,44"
+                Width="200"
+                />
+
     </Grid>
 </Page>

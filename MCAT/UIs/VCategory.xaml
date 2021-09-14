@@ -24,19 +24,6 @@
                 <DataGridTextColumn Header="Options" Width="*"/>
             </DataGrid.Columns>
 
-            <!-- Styling -->
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="FontSize" Value="16"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                </Style>
-
-                <Style TargetType="{x:Type DataGridCell}">
-                    <Setter Property="FontSize" Value="16"/>
-                </Style>
-            </DataGrid.Resources>
         </DataGrid>
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
                 Content="Add a Category" Margin="1016,54,20,44"
