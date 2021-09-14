@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MCAT.Controllers;
 
 namespace MCAT.UIs
 {
@@ -20,9 +21,14 @@ namespace MCAT.UIs
     /// </summary>
     public partial class Customers : Page
     {
+        CustomerController cont = new CustomerController();
         public Customers()
         {
             InitializeComponent();
+            foreach (var record in cont.GetAll())
+            {
+                DataGridCustomers.Items.Add(record);
+            }
         }
     }
 }

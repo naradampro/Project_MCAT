@@ -16,7 +16,7 @@ namespace MCAT.Controllers
         /// <summary>
         /// Add a customer record to DB
         /// </summary>
-        /// <param name="category"></param>
+        /// <param name="customer"></param>
         /// <returns>
         /// Returns <c>True</c> if the execution is successful.
         /// Else retuns <c>False</c>
