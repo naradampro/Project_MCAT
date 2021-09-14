@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace MCAT.Entities
 {
     class Driver
@@ -22,7 +23,7 @@ namespace MCAT.Entities
         private string lname;
 
         //Driver Birth Date
-        private string bdate;
+        private DateTime bdate;
 
         //License ID
         private int lid;
@@ -31,7 +32,7 @@ namespace MCAT.Entities
         private string lictype;
 
         //License Expire Date
-        private string licexdate;
+        private DateTime licexdate;
 
         //Driver Status
         private int dstatus;
@@ -42,10 +43,10 @@ namespace MCAT.Entities
         public string Nic { get => nic; set => nic = value; }
         public string Fname { get => fname; set => fname = value; }
         public string Lname { get => lname; set => lname = value; }
-        public string Bdate { get => bdate; set => bdate = value; }
         public int Lid { get => lid; set => lid = value; }
         public string Lictype { get => lictype; set => lictype = value; }
-        public string Licexdate { get => licexdate; set => licexdate = value; }
         public int Dstatus { get => dstatus; set => dstatus = value; }
+        public DateTime Licexdate { get => licexdate.Date; set => licexdate = value; }
+        public DateTime Bdate { get => bdate; set => bdate = value; }
     }
 }
