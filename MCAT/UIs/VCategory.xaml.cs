@@ -36,6 +36,5 @@ namespace MCAT.UIs
         {
             ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
         }
-
     }
 }
