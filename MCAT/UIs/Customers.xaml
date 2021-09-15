@@ -8,7 +8,28 @@
       Height="650" Width="1250"
       Title="Customers">
 
-    <Grid Background="White">
-        <Label Content="Customers" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+    <Grid Background="white">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DataGridCustomers" Grid.Row="1" Margin="20,20,20,20" IsReadOnly="True" CanUserAddRows="False" ColumnHeaderHeight="40" HeadersVisibility="Column">
+            <!-- Column header Text and Data binding -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Customer ID" Binding="{Binding Id}" Width="100"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Fname}" Width="150"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Lname}" Width="150"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="300"/>
+                <DataGridTextColumn Header="Mobile Number" Binding="{Binding Mobileno}" Width="100"/>
+                <DataGridTextColumn Header="NIC" Binding="{Binding Nic}" Width="100"/>
+                <DataGridTextColumn Header="Options" Width="*"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                Content="Add a new Customer" Margin="1016,54,20,44"
+                Width="200"
+                />
+
     </Grid>
 </Page>

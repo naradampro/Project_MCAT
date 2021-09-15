@@ -32,10 +32,9 @@ namespace MCAT.UIs
 
         }
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        private void OpenAddCaetgory(object sender, RoutedEventArgs e)
         {
-            AddCategory addCategoryWindow = new AddCategory();
-            addCategoryWindow.Show();
+            ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
         }
     }
 }
