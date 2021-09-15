@@ -12,7 +12,9 @@
             <RowDefinition/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="DataGridVcat" Grid.Row="1" Margin="20,20,20,20" IsReadOnly="True" CanUserAddRows="False" ColumnHeaderHeight="40" HeadersVisibility="Column">
+        <DataGrid x:Name="DataGridVcat" Grid.Row="1" Margin="20,20,20,20"
+                  IsReadOnly="True" CanUserAddRows="False" ColumnHeaderHeight="40" HeadersVisibility="Column"
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible">
             <!-- Column header Text and Data binding -->
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Category ID" Binding="{Binding Id}" Width="100"/>
@@ -25,10 +27,13 @@
             </DataGrid.Columns>
 
         </DataGrid>
+
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                Content="Add a Category" Margin="1016,54,20,44"
-                Width="200"
+                Content="Add a Category"
+                Width="200" Click="OpenAddCaetgory" Margin="1030,80,20,18"
                 />
 
+        
+        
     </Grid>
 </Page>

@@ -27,16 +27,6 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <!--
-            <TextBlock Text="Dashboard"
-                       Foreground="White"
-                       Grid.Column="0"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Medium"/>
-            -->
-
 
                 <RadioButton x:Uid="0" x:Name="NavDashboard" Grid.Column="0" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="True" Background="White" Height="50" Click="Navigate">
                     <StackPanel Orientation="Horizontal">
@@ -110,59 +100,26 @@
                            FontWeight="Medium"/>
                 </StackPanel>
             </RadioButton>
-
-
-
-
-
-
-
-            <!--
-            <TextBlock Text="Customers"
-                       Foreground="White"
-                       Grid.Column="1"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Medium"/>
-
-            <TextBlock Text="Reservations"
-                       Foreground="White"
-                       Grid.Column="2"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Medium"/>
-
-            <TextBlock Text="Drivers"
-                       Foreground="White"
-                       Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Medium"/>
-
-            <TextBlock Text="Vehicles"
-                       Foreground="White"
-                       Grid.Column="4"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Medium"/>
-
-            <TextBlock Text="Vehicle Categories"
-                       Foreground="White"
-                       Grid.Column="5"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Medium"/>
-            -->
-
         </Grid>
 
-
-
+        
+        <!--Main Page View-->
         <Frame x:Name="PageView" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+
+
+        <!--Model popup loader-->
+        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
+                                   Name="addCat">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Width="800" Height="500" HorizontalAlignment="Center">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
+                            Close
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </Window>
