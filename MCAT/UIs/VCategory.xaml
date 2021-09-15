@@ -30,7 +30,7 @@
 
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
                 Content="Add a Category"
-                Width="200" Click="OpenAddCaetgory" Margin="1030,80,20,18"
+                Width="200" Click="OpenAddCategory" Margin="1030,80,20,18"
                 />
 
         

@@ -27,5 +27,10 @@ namespace MCAT.UIs
             InitializeComponent();
             DataGridReservations.ItemsSource = cont.GetAll();
         }
+
+        private void OpenAddReservation(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).addRes.IsOpen = true;
+        }
     }
 }

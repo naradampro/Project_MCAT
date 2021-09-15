@@ -30,5 +30,10 @@ namespace MCAT.UIs
                 DataGridCustomers.Items.Add(record);
             }
         }
+
+        private void OpenAddCustomer(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).addCus.IsOpen = true;
+        }
     }
 }
