@@ -107,7 +107,7 @@
         <Frame x:Name="PageView" NavigationUIVisibility="Hidden" Grid.Row="1"/>
 
 
-        <!--Model popup loader for add new category-->
+        <!--Model popup loader-->
         <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
                                    Name="addCat">
             <materialDesign:DialogHost.DialogContent>
@@ -122,64 +122,6 @@
             </materialDesign:DialogHost.DialogContent>
         </materialDesign:DialogHost>
 
-        <!--Model popup loader for add new customer-->
-        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
-                                   Name="addCus">
-            <materialDesign:DialogHost.DialogContent>
-                <Grid Width="800" Height="500" HorizontalAlignment="Center">
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
-                            Close
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:DialogHost.DialogContent>
-        </materialDesign:DialogHost>
-
-        <!--Model popup loader for add new driver-->
-        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
-                                   Name="addDriver">
-            <materialDesign:DialogHost.DialogContent>
-                <Grid Width="800" Height="500" HorizontalAlignment="Center">
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
-                            Close
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:DialogHost.DialogContent>
-        </materialDesign:DialogHost>
-
-        <!--Model popup loader for add new vehicle-->
-        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
-                                   Name="addVehi">
-            <materialDesign:DialogHost.DialogContent>
-                <Grid Width="800" Height="500" HorizontalAlignment="Center">
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
-                            Close
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:DialogHost.DialogContent>
-        </materialDesign:DialogHost>
-
-        <!--Model popup loader for add new reservation-->
-        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
-                                   Name="addRes">
-            <materialDesign:DialogHost.DialogContent>
-                <Grid Width="800" Height="500" HorizontalAlignment="Center">
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
-                            Close
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:DialogHost.DialogContent>
-        </materialDesign:DialogHost>
+         
     </Grid>
 </Window>

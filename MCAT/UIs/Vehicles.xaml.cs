@@ -28,10 +28,5 @@ namespace MCAT.UIs
             InitializeComponent();
             DataGridaVehicles.ItemsSource = cont.GetAll();
         }
-
-        private void OpenAddVehicle(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)Application.Current.MainWindow).addVehi.IsOpen = true;
-        }
     }
 }
