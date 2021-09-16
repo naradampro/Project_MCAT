@@ -27,11 +27,11 @@ namespace MCAT.Controllers
         {
             try
             {
-                /* string valuelist = "@Catname,@Pcapacity,@Costonekm,@Avaivehicles,@Costoneday";
-                 string fieldlist = "`catname`, `pcapacity`, `costonekm`, `avaivehicles`, `costoneday`";
-                 string sqlquery = "INSERT INTO `vcategory` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
-                 var returnId = DBController.connect().Query<int>(sqlquery, category).SingleOrDefault();
-                 customer.Id = returnId;*/
+                 string valuelist = "@Address,@Mobileno,@Nic,@Fname,@Lname,@Bdate,@Lid,@Lictype,@Licxdate,@Dstatus";
+                 string fieldlist = "`address`, `mobileno`, `nic`, `fname`, `lname`, `bdate`, `lid`, `lictype`, `licxdate`, `dstatus`";
+                 string sqlquery = "INSERT INTO `driver` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
+                 var returnId = DBController.connect().Query<int>(sqlquery, driver).SingleOrDefault();
+                 driver.Id = returnId;
             }
             catch (Exception ex)
             {

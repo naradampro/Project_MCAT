@@ -23,7 +23,7 @@ namespace MCAT.Entities
         private string nsdate;
 
         //Vehicle Status
-        private string acsatus;
+        private string acstatus;
 
         //Description
         private string description;
@@ -37,7 +37,7 @@ namespace MCAT.Entities
         public string FuelType { get => fuelType; set => fuelType = value; }
         public string Lsdate { get => lsdate; set => lsdate = value; }
         public string Nsdate { get => nsdate; set => nsdate = value; }
-        public string Acsatus { get => acsatus; set => acsatus = value; }
+        public string Acstatus { get => acstatus; set => acstatus = value; }
         public string Description { get => description; set => description = value; }
         public int Vstatus { get => vstatus; set => vstatus = value; }
     }
