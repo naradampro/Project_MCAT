@@ -3,10 +3,123 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MCAT"
+        xmlns:local="clr-namespace:MCAT" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="MIHISARA CABS AND TOURS" Height="700" Width="1250">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="634.04"/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="White">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+                <RadioButton x:Uid="0" x:Name="NavDashboard" Grid.Column="0" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="True" Background="White" Height="50" Click="Navigate">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ViewDashboardVariant" Foreground="#FF062240" Height="32" Width="44"/>
+                        <TextBlock Text="Dashboard"
+                           Foreground="#FF062240"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"/>
+                    </StackPanel>
+                </RadioButton>
+
+            <RadioButton x:Uid="1" x:Name="NavCustomers" Grid.Column="1" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Account" Foreground="#FF062240" Height="32" Width="44"/>
+                        <TextBlock Text="Customers"
+                           Foreground="#FF062240"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"/>
+                    </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Uid="2" x:Name="NavReservations" Grid.Column="2" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Book" Foreground="#FF062240" Height="32" Width="Auto"/>
+                    <TextBlock Text="Reservations"
+                           Foreground="#FF062240"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"/>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Uid="3" x:Name="NavDrivers" Grid.Column="3" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Steering" Foreground="#FF062240" Height="32" Width="44"/>
+                    <TextBlock Text="Drivers"
+                           Foreground="#FF062240"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"/>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Uid="4" x:Name="NavVehicles" Grid.Column="4" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Cab" Foreground="#FF062240" Height="32" Width="Auto"/>
+                    <TextBlock Text="Vehicles"
+                           Foreground="#FF062240"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"/>
+                </StackPanel>
+            </RadioButton>
+
+
+            <RadioButton x:Uid="5" x:Name="NavVCat" Grid.Column="5" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="CarMultiple" Foreground="#FF062240" Height="32" Width="Auto"/>
+                    <TextBlock Text="Vehicle Categories"
+                           Foreground="#FF062240"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                           FontWeight="Medium"/>
+                </StackPanel>
+            </RadioButton>
+        </Grid>
+
+        
+        <!--Main Page View-->
+        <Frame x:Name="PageView" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+
+
+        <!--Model popup loader-->
+        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
+                                   Name="addCat">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Width="800" Height="500" HorizontalAlignment="Center">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
+                            Close
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </Window>

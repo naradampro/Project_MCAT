@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Dapper;
+using MCAT.Entities;
+
+namespace MCAT.Controllers
+{
+    class ReservationController
+    {
+        /// <summary>
+        /// Name of the table to be manipulated.
+        /// </summary>
+        private string table = "reservation";
+
+        /// <summary>
+        /// Add a reservation record to DB
+        /// </summary>
+        /// <param name="reservation"></param>
+        /// <returns>
+        /// Returns <c>True</c> if the execution is successful.
+        /// Else retuns <c>False</c>
+        /// </returns>
+        public bool Add(Reservation reservation)
+        {
+            try
+            {
+                /* string valuelist = "@Catname,@Pcapacity,@Costonekm,@Avaivehicles,@Costoneday";
+                 string fieldlist = "`catname`, `pcapacity`, `costonekm`, `avaivehicles`, `costoneday`";
+                 string sqlquery = "INSERT INTO `vcategory` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
+                 var returnId = DBController.connect().Query<int>(sqlquery, category).SingleOrDefault();
+                 customer.Id = returnId;*/
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        /// <summary>
+        /// Fetch all record from reservation table of DB
+        /// </summary>
+        /// <returns>A <c>List</c> of Customers</returns>
+        public List<Reservation> GetAll()
+        {
+            string sqlquery = "Select * From " + table;
+            return DBController.connect().Query<Reservation>(sqlquery).ToList();
+        }
+
+
+        /// <summary>
+        /// To fetch reservation object from DB with id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A Reservation with given id</returns>
+        public Reservation GetById(int id)
+        {
+            string sqlquery = "Select * From " + table + " Where Id=@Id";
+            return DBController.connect().Query<Reservation>(sqlquery, new { Id = id }).FirstOrDefault();
+        }
+
+
+        /// <summary>
+        /// Updates a given column
+        /// </summary>
+        /// <param name="reservation"></param>
+        /// <param name="ColumnName"></param>
+        /// <returns></returns>
+        public bool Update(Reservation reservation, string ColumnName)
+        {
+            string sqlquery = "UPDATE " + table + " SET " + ColumnName + "=@" + ColumnName + " Where Id=@Id";
+            var count = DBController.connect().Execute(sqlquery, reservation);
+            return count > 0;
+        }
+
+
+        /// <summary>
+        /// Delete record using ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool Delete(int id)
+        {
+            var affectedrows = DBController.connect().Execute("DELETE FROM " + table + " WHERE Id=@Id", new { Id = id });
+            return affectedrows > 0;
+        }
+    }
+}
