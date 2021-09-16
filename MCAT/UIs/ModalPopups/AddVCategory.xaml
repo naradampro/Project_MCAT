@@ -118,11 +118,11 @@ IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEna
 
 
 
-            <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            <Button x:Name="BtnAddDriver" Style="{StaticResource MaterialDesignFlatLightBgButton}"
 Content="Add Category"
 Width="200"
 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-Grid.Row="6"/>
+Grid.Row="6" Click="Button_Click"/>
 
 
 

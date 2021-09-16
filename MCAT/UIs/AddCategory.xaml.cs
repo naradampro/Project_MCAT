@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MCAT.UIs.ModalPopups
+namespace MCAT.UIs
 {
     /// <summary>
-    /// Interaction logic for AddVCategory.xaml
+    /// Interaction logic for AddCategory.xaml
     /// </summary>
-    public partial class AddVCategory : Page
+    public partial class AddCategory : Window
     {
-        public AddVCategory()
+        public AddCategory()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)Application.Current.MainWindow).Popup(sender, e);
         }
     }
 }
