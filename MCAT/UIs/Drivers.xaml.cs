@@ -27,5 +27,11 @@ namespace MCAT.UIs
             InitializeComponent();
             DataGridDrivers.ItemsSource = cont.GetAll();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).Popup(sender, e);
+            ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
+        }
     }
 }

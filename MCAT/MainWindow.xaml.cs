@@ -53,5 +53,21 @@ namespace MCAT
             }
         }
 
+        public void Popup(object sender, RoutedEventArgs e)
+        {
+            string trigger = ((Button)e.Source).Name;
+
+            switch (trigger)
+            {
+                case "BtnAddVCat":
+                    FramePopup.Content = new UIs.ModalPopups.AddVCategory();
+                    break;
+                case "BtnAddDriver":
+                    FramePopup.Content = new UIs.ModalPopups.AddDriver();
+                    break;
+            }
+
+        }
+
     }
 }

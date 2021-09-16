@@ -19,9 +19,9 @@
             </DataGrid.BindingGroup>
 
         </DataGrid>
-        <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
+        <Button x:Name="BtnAddDriver" Style="{StaticResource MaterialDesignFlatLightBgButton}"
                 Content="Add a new Driver" Margin="1016,54,20,44"
-                Width="200"
+                Width="200" Click="Button_Click"
                 />
 
     </Grid>

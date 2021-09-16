@@ -32,10 +32,11 @@ namespace MCAT.UIs
 
         }
 
-        private void OpenAddCaetgory(object sender, RoutedEventArgs e)
+        private void OpenPopup(object sender, RoutedEventArgs e)
         {
+            ((MainWindow)Application.Current.MainWindow).Popup(sender,e);
             ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
         }
-
+            
     }
 }

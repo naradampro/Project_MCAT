@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MCAT.Controllers;
-using MCAT.Entities;
 
-namespace MCAT.UIs
+namespace MCAT.UIs.ModalPopups
 {
     /// <summary>
-    /// Interaction logic for Customers.xaml
+    /// Interaction logic for AddVCategory.xaml
     /// </summary>
-    public partial class Customers : Page
+    public partial class AddVCategory : Page
     {
-        CustomerController cont = new CustomerController();
-        public Customers()
+        public AddVCategory()
         {
             InitializeComponent();
-            foreach (var record in cont.GetAll())
-            {
-                DataGridCustomers.Items.Add(record);
-            }
-
         }
-
     }
 }
