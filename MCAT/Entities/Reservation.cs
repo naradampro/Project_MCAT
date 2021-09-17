@@ -36,8 +36,6 @@ namespace MCAT.Entities
         //Status
         private int rstatus;
 
-
-        
         public int Id { get => id; set => id = value; }
         public int Cid { get => cid; set => cid = value; }
         public int Vid { get => vid; set => vid = value; }

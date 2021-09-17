@@ -31,6 +31,36 @@ namespace MCAT.Entities
         //Status
         private int vstatus;
 
+        public Vehicle()
+        {
+
+        }
+
+        public Vehicle(int id, int catid, int vregno, string fuelType, string lsdate, string nsdate, string acsatus, string description, int vstatus)
+        {
+            this.id = id;
+            this.catid = catid;
+            this.vregno = vregno;
+            this.fuelType = fuelType;
+            this.lsdate = lsdate;
+            this.nsdate = nsdate;
+            this.acsatus = acsatus;
+            this.description = description;
+            this.vstatus = vstatus;
+        }
+
+        public Vehicle(int catid, int vregno, string fuelType, string lsdate, string nsdate, string acsatus, string description, int vstatus)
+        {
+            this.catid = catid;
+            this.vregno = vregno;
+            this.fuelType = fuelType;
+            this.lsdate = lsdate;
+            this.nsdate = nsdate;
+            this.acsatus = acsatus;
+            this.description = description;
+            this.vstatus = vstatus;
+        }
+
         public int Id { get => id; set => id = value; }
         public int Catid { get => catid; set => catid = value; }
         public int Vregno { get => vregno; set => vregno = value; }
