@@ -37,7 +37,7 @@ namespace MCAT.Entities
         private int rstatus;
 
 
-
+        
         public int Id { get => id; set => id = value; }
         public int Cid { get => cid; set => cid = value; }
         public int Vid { get => vid; set => vid = value; }
@@ -49,5 +49,11 @@ namespace MCAT.Entities
         public double Distance { get => distance; set => distance = value; }
         public string Description { get => description; set => description = value; }
         public int Rstatus { get => rstatus; set => rstatus = value; }
+        
     }
+    public Reservation()
+    {
+
+    }
+
 }
