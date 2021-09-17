@@ -50,10 +50,8 @@ namespace MCAT.Entities
         public string Description { get => description; set => description = value; }
         public int Rstatus { get => rstatus; set => rstatus = value; }
         
-    }
-    public Reservation()
-    {
 
+        public Reservation()
     }
 
 }
