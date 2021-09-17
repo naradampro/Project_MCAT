@@ -3,7 +3,10 @@ namespace MCAT.Entities
 {
     class Customer
     {
+        //customer id
         private int id;
+
+        //customer address
         private string address;
 
         //Customer First Name
