@@ -30,5 +30,37 @@ namespace MCAT.Entities
         public int Mobileno { get => mobileno; set => mobileno = value; }
         public int Cstatus { get => cstatus; set => cstatus = value; }
         public string Nic { get => nic; set => nic = value; }
+
+        //default constructor
+        public Customer()
+        {
+
+        }
+
+        //parameterized constructors
+        public Customer(int id, string address, string fname, string lname, int mobileno, int cstatus, string nic)
+        {
+            this.id=id;
+            this.address=address;
+            this.fname=fname;
+            this.lname=lname;
+            this.mobileno=mobileno;
+            this.cstatus=cstatus;
+            this.nic=nic;
+        }
+
+        //parameterized constructors without id
+        public Customer( string address, string fname, string lname, int mobileno, int cstatus, string nic)
+        {
+            
+            this.address=address;
+            this.fname=fname;
+            this.lname=lname;
+            this.mobileno=mobileno;
+            this.cstatus=cstatus;
+            this.nic=nic;
+        }
     }
+
+    
 }
