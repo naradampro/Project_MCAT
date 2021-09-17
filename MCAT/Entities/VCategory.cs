@@ -32,6 +32,17 @@ namespace MCAT.Entities
         public string Catname { get => catname; set => catname = value; }
         public double Costonekm { get => costonekm; set => costonekm = value; }
         public double Costoneday { get => costoneday; set => costoneday = value; }
+
+        //parameterized constructors
+        public VCategory(int id, int pcapacity, int avaivehicles, string catname, Double costonekm, Double costoneday)
+        {
+            this.id=id;
+            this.pcapacity=pcapacity;
+            this.avaivehicles=avaivehicles;
+            this.catname=catname;
+            this.costonekm=costonekm;
+            this.costoneday=costoneday;
+        }
     }
 }
 
