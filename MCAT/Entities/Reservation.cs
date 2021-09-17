@@ -87,6 +87,7 @@ namespace MCAT.Entities
             this.distance=distance;
             this.description=description;
             this.rstatus=rstatus;
+        }
     }
 
 }
