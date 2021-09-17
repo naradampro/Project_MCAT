@@ -47,5 +47,45 @@ namespace MCAT.Entities
         public string Lictype { get => lictype; set => lictype = value; }
         public string Licexdate { get => licexdate; set => licexdate = value; }
         public int Dstatus { get => dstatus; set => dstatus = value; }
+
+
+        //default constructors
+        public Driver()
+        {
+
+        }
+
+        //parameterized constructors
+        public Driver(int id, string address, int mobileno, string nic, string fname, string lname, string bdate, int lid, string lictype, string licexdate,int dstatus)
+        {
+            this.id=id;
+            this.address=address;
+            this.mobileno=mobileno;
+            this.nic=nic;
+            this.fname=fname;
+            this.lname=lname;
+            this.bdate=bdate;
+            this.lid=lid;
+            this.lictype=lictype;
+            this.licexdate=licexdate;
+            this.dstatus=dstatus;
+        }
+
+
+        //parameterized constructors without id
+        public Driver( string address, int mobileno, string nic, string fname, string lname, string bdate, int lid, string lictype, string licexdate,int dstatus)
+        {
+           
+            this.address=address;
+            this.mobileno=mobileno;
+            this.nic=nic;
+            this.fname=fname;
+            this.lname=lname;
+            this.bdate=bdate;
+            this.lid=lid;
+            this.lictype=lictype;
+            this.licexdate=licexdate;
+            this.dstatus=dstatus;
+        }
     }
 }
