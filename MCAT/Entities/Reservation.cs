@@ -61,6 +61,7 @@ namespace MCAT.Entities
             this.rstatus=rstatus;
         }
 
+
         //parameterized constructors without id
         public Reservation( int cid, int vid, int did, string pickuploc, string pickupdate, string pickuptime, int days, double distance,string description, int rstatus)
         {
