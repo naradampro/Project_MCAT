@@ -7,7 +7,7 @@ using Dapper;
 using MCAT.Entities;
 
 namespace MCAT.Controllers
-{
+{ 
     class VehicleController
     {
         /// <summary>
