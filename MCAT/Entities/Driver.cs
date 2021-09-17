@@ -90,5 +90,6 @@ namespace MCAT.Entities
         public string Lictype { get => lictype; set => lictype = value; }
         public string Licexdate { get => licexdate; set => licexdate = value; }
         public int Dstatus { get => dstatus; set => dstatus = value; }
+
     }
 }
