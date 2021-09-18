@@ -15,6 +15,26 @@ namespace MCAT.Entities
         //Payment Date
         private string date;
 
+        public Payment()
+        {
+
+        }
+
+        public Payment(int id, int rid, float amount, string date)
+        {
+            this.id = id;
+            this.rid = rid;
+            this.amount = amount;
+            this.date = date;
+        }
+
+        public Payment( int rid, float amount, string date)
+        {
+            this.rid = rid;
+            this.amount = amount;
+            this.date = date;
+        }
+
         public int Id { get => id; set => id = value; }
 
         public int Rid { get => rid; set => rid = value; }

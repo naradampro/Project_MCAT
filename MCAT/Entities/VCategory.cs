@@ -26,6 +26,36 @@ namespace MCAT.Entities
         //Cost per 1 day with driver salary and other expenses
         private Double costoneday;  
 
+        
+
+        //default constructors
+        public VCategory()
+        {
+
+        }
+
+        //parameterized constructors
+        public VCategory(int id, int pcapacity, int avaivehicles, string catname, Double costonekm, Double costoneday)
+        {
+            this.id=id;
+            this.pcapacity=pcapacity;
+            this.avaivehicles=avaivehicles;
+            this.catname=catname;
+            this.costonekm=costonekm;
+            this.costoneday=costoneday;
+        }
+
+        //parameterized constructors without id
+        public VCategory( int pcapacity, int avaivehicles, string catname, Double costonekm, Double costoneday)
+        {
+            
+            this.pcapacity=pcapacity;
+            this.avaivehicles=avaivehicles;
+            this.catname=catname;
+            this.costonekm=costonekm;
+            this.costoneday=costoneday;
+        }
+
         public int Id { get => id; set => id = value; }
         public int Pcapacity { get => pcapacity; set => pcapacity = value; }
         public int Avaivehicles { get => avaivehicles; set => avaivehicles = value; }
