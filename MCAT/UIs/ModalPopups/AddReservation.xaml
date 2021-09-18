@@ -9,7 +9,7 @@
       Height="550" Width="750"
       Title="AddReservation">
 
-    <Grid>
+    <Grid Background="White">
 
         <Grid Margin="49,12,55,32">
 

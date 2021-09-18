@@ -30,7 +30,7 @@
 
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
                 Content="Add a Category"
-                Width="200" Click="OpenPopup" Margin="1030,80,20,18"
+                Width="200" Click="OpenAddVCat" Margin="1030,80,20,18"
                 x:Name="BtnAddVCat"/>
 
         

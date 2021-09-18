@@ -32,9 +32,9 @@ namespace MCAT.UIs
 
         }
 
-        private void OpenPopup(object sender, RoutedEventArgs e)
+        private void OpenAddVCat(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).Popup(sender,e);
+            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.AddCategory();
             ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
         }
             

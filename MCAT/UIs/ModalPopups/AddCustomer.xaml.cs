@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfUI1.AllForms
+namespace MCAT.UIs.ModalPopups
 {
     /// <summary>
     /// Interaction logic for AddCustomer.xaml

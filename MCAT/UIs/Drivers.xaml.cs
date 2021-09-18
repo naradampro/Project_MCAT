@@ -29,10 +29,10 @@ namespace MCAT.UIs
             DataGridDrivers.ItemsSource = cont.GetAll();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OpenAddDriver(object sender, RoutedEventArgs e)
         {
             Entities.Driver driver = (Entities.Driver)DataGridDrivers.SelectedItem;
-            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.ViewDriver(driver);
+            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.AddDriver();
             ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
         }
     }

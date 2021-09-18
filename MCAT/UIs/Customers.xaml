@@ -33,6 +33,7 @@
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
                 Content="Add a new Customer" Margin="1016,54,20,44"
                 Width="200"
+                Click="OpenAddCustomer"
                 />
 
     </Grid>
