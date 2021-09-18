@@ -30,5 +30,6 @@ namespace MCAT.UIs
                 DataGridCustomers.Items.Add(record);
             }
         }
+ 
     }
 }

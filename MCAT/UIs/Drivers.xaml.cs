@@ -26,6 +26,6 @@ namespace MCAT.UIs
         {
             InitializeComponent();
             DataGridDrivers.ItemsSource = cont.GetAll();
-        }
+        } 
     }
 }

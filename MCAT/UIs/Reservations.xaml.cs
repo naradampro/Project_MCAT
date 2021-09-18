@@ -27,5 +27,6 @@ namespace MCAT.UIs
             InitializeComponent();
             DataGridReservations.ItemsSource = cont.GetAll();
         }
+ 
     }
 }
