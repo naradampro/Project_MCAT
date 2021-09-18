@@ -111,7 +111,7 @@
         <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,0,0,0" Grid.RowSpan="2"
                                    Name="addCat">
             <materialDesign:DialogHost.DialogContent>
-                <Grid Width="900" Height="550" HorizontalAlignment="Center">
+                <Grid Width="800" Height="600" HorizontalAlignment="Center">
                     <Frame Margin="20,20,20,60" x:Name="FramePopup"  NavigationUIVisibility="Hidden"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20,10">
                         <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatAccentButton}" Margin="4" VerticalAlignment="Center">
