@@ -87,5 +87,6 @@ namespace MCAT.Entities
         public DateTime Licexdate { get => licexdate.Date; set => licexdate = value; }
         public DateTime Bdate { get => bdate; set => bdate = value; }
 
+        public string Name { get => fname + " " + lname; }
     }
 }
