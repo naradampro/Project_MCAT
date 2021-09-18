@@ -23,6 +23,51 @@ namespace MCAT
         public MainWindow()
         {
             InitializeComponent();
+            PageView.Content = new UIs.Dashboard();
         }
+
+        private void Navigate(object sender, RoutedEventArgs e)
+        {
+            int index = int.Parse(((RadioButton)e.Source).Uid);
+
+            switch (index)
+            {
+                case 0:
+                    PageView.Content = new UIs.Dashboard();
+                    break;
+                case 1:
+                    PageView.Content = new UIs.Customers();
+                    break;
+                case 2:
+                    PageView.Content = new UIs.Reservations();
+                    break;
+                case 3:
+                    PageView.Content = new UIs.Drivers();
+                    break;
+                case 4:
+                    PageView.Content = new UIs.Vehicles();
+                    break;
+                case 5:
+                    PageView.Content = new UIs.VCategory();
+                    break;
+            }
+        }
+
+        public void Popup(object sender, RoutedEventArgs e)
+        {
+            string trigger = ((Button)e.Source).Name;
+
+            switch (trigger)
+            {
+                case "BtnAddVCat":
+                    FramePopup.Content = new UIs.ModalPopups.AddVehicle();
+                    break;
+                case "BtnAddDriver":
+                    FramePopup.Content = new UIs.ModalPopups.AddDriver();
+                    break;
+            }
+
+        }
+
     }
 }

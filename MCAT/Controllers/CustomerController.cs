@@ -6,30 +6,30 @@ using MCAT.Entities;
 
 namespace MCAT.Controllers
 {
-    class VCategoryController
+    class CustomerController
     {
         /// <summary>
         /// Name of the table to be manipulated.
         /// </summary>
-        private string table = "vcategory";
+        private string table = "customer";
 
         /// <summary>
-        /// Add Vehicle category record to DB
+        /// Add a customer record to DB
         /// </summary>
-        /// <param name="category"></param>
+        /// <param name="customer"></param>
         /// <returns>
         /// Returns <c>True</c> if the execution is successful.
         /// Else retuns <c>False</c>
         /// </returns>
-        public bool Add(VCategory category)
+        public bool Add(Customer customer)
         {
             try
             {
-                string valuelist = "@Catname,@Pcapacity,@Costonekm,@Avaivehicles,@Costoneday";
+               /* string valuelist = "@Catname,@Pcapacity,@Costonekm,@Avaivehicles,@Costoneday";
                 string fieldlist = "`catname`, `pcapacity`, `costonekm`, `avaivehicles`, `costoneday`";
-                string sqlquery = "INSERT INTO `"+table+"` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
+                string sqlquery = "INSERT INTO `vcategory` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
                 var returnId = DBController.connect().Query<int>(sqlquery, category).SingleOrDefault();
-                category.Id = returnId;
+                customer.Id = returnId;*/
             }
             catch (Exception ex)
             {
@@ -40,38 +40,38 @@ namespace MCAT.Controllers
 
 
         /// <summary>
-        /// Fetch all record from vehicle category table of DB
+        /// Fetch all record from customer table of DB
         /// </summary>
-        /// <returns>A <c>List</c> of Vehicle categories</returns>
-        public List<VCategory> GetAll()
+        /// <returns>A <c>List</c> of Customers</returns>
+        public List<Customer> GetAll()
         {
             string sqlquery = "Select * From " + table;
-            return DBController.connect().Query<VCategory>(sqlquery).ToList();
+            return DBController.connect().Query<Customer>(sqlquery).ToList();
         }
 
 
         /// <summary>
-        /// To fetch Vehicle category object from DB with id
+        /// To fetch customer object from DB with id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>A Vehicle category with given id</returns>
-        public VCategory GetById(int id)
+        /// <returns>A Customer with given id</returns>
+        public Customer GetById(int id)
         {
             string sqlquery = "Select * From "+table+ " Where Id=@Id"; 
-            return DBController.connect().Query<VCategory>(sqlquery, new { Id = id }).FirstOrDefault();
+            return DBController.connect().Query<Customer>(sqlquery, new { Id = id }).FirstOrDefault();
         }
 
 
         /// <summary>
         /// Updates a given column
         /// </summary>
-        /// <param name="category"></param>
+        /// <param name="customer"></param>
         /// <param name="ColumnName"></param>
         /// <returns></returns>
-        public bool Update(VCategory category, string ColumnName)
+        public bool Update(Customer customer, string ColumnName)
         {
             string sqlquery = "UPDATE "+table+ " SET " + ColumnName + "=@" + ColumnName + " Where Id=@Id";
-            var count = DBController.connect().Execute(sqlquery, category);
+            var count = DBController.connect().Execute(sqlquery, customer);
             return count > 0;
         }
 

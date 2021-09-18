@@ -1,0 +1,164 @@
+﻿<Page x:Class="MCAT.UIs.ModalPopups.AddVehicle"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MCAT.UIs.ModalPopups"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      Height="550" Width="750"
+      Title="AddVehicle">
+
+    <Grid>
+
+        <Grid Margin="49,12,55,32">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="375*"/>
+                <ColumnDefinition Width="375*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Title-->
+            <TextBlock Text="Add Vehicle Details"
+                                   FontSize="20"
+                                   FontWeight="Medium"
+                                   Foreground="#FF062044" 
+                                   VerticalAlignment="Top" 
+                                   HorizontalAlignment="Center" 
+                                   Grid.RowSpan="2" 
+                                   Margin="0,50,0,0"
+                                   Grid.ColumnSpan="2"/>
+
+            <!--category-->
+            <StackPanel  x:Name="ComboCategory"
+                         Grid.Row="1"
+                         Grid.Column="0"
+                         VerticalAlignment="Center" 
+                         Width="290"
+                         Margin="15,15,0,0">
+
+                <ComboBox Foreground="Gray"
+                                      FontSize="15"
+                                      materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}">
+                    <ComboBoxItem IsSelected="True"
+                                  Content="Category" />
+                    <ComboBoxItem  Content="Non-AC" />
+                </ComboBox>
+            </StackPanel>
+
+            <!--model-->
+            <TextBox  x:Name="TxtModel"
+                      Grid.Row="1"
+                      materialDesign:HintAssist.Hint="Model"
+                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                      VerticalAlignment="Center" 
+                      FontSize="15" 
+                      Width="290"
+                      Margin="0,0,15,0"
+                      Grid.Column="1"/>
+
+            <!--registration no-->
+            <TextBox  x:Name="TxtVehicleRegNo"
+                      Grid.Row="2"
+                      materialDesign:HintAssist.Hint="Registration No"
+                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                      VerticalAlignment="Center" 
+                      FontSize="15" 
+                      Width="290"
+                      Margin="15,0,0,0" 
+                      Grid.Column="0"/>
+
+            <!--passenger capacity-->
+            <TextBox  x:Name="TxtPassengerCapacity"
+                      Grid.Row="2"
+                      materialDesign:HintAssist.Hint="Passenger Capacity"
+                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                      VerticalAlignment="Center" 
+                      FontSize="15" 
+                      Width="290"
+                      Margin="0,0,15,0"
+                      Grid.Column="1"/>
+
+            <!--fuel type-->
+            <TextBox  x:Name="TxtFuelType"
+                      Grid.Row="3"
+                      materialDesign:HintAssist.Hint="Fuel Type"
+                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                      VerticalAlignment="Center" 
+                      FontSize="15" 
+                      Width="290"
+                      Margin="15,0,0,0" 
+                      Grid.Column ="0"/>
+
+            <!--AC status-->
+            <StackPanel  x:Name="ComboACStatus"
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         VerticalAlignment="Center" 
+                         Width="290"
+                         Margin="0,19,15,0" >
+
+                <ComboBox Foreground="Gray"
+                          FontSize="15"
+                          materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}">
+                    <ComboBoxItem IsSelected="True"
+                                  Content="AC"  />
+                    <ComboBoxItem Content="Non-AC" />
+                </ComboBox>
+            </StackPanel>
+
+
+            <!--last service date-->
+            <DatePicker x:Name="TxtLSDate"
+                        Grid.Row="4"
+                        Width="290"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Last Service Date"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                        Grid.Column ="0"
+                        Margin="15,0,0,0"/>
+
+            <!--next service date-->
+            <DatePicker x:Name="TxtNSDate"
+                        Grid.Row="4"
+                        Width="290"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Next Service Date"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                        Grid.Column="1"
+                        Margin="0,0,15,0"/>
+
+            <!--description-->
+            <TextBox  x:Name="TxtDescription"
+                      Grid.Row="5"
+                      materialDesign:HintAssist.Hint="Description on Conditions and Issues"
+                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                      VerticalAlignment="Center" 
+                      FontSize="15" 
+                      Width="600"  
+                      Grid.ColumnSpan="2"/>
+
+            <!--add vehi button-->
+            <Button x:Name="btnAddVehicle"
+                    Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    Content="Add New Vehicle"
+                    Width="200"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+                    Grid.Row="6"
+                    Grid.ColumnSpan="2" 
+                    VerticalAlignment="Center"/>
+        </Grid>
+        
+    </Grid>
+</Page>
