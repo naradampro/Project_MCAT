@@ -51,7 +51,7 @@
                       Margin="15,0,0,0"
                       Grid.ColumnSpan="1"
                       IsReadOnly="True"
-                      Text="{Binding Fanme}"/>
+                      Text="{Binding Fname}"/>
 
             <!--last name-->
             <TextBox  x:Name="TxtLastName"
@@ -63,7 +63,8 @@
                       Width="290"
                       Margin="0,0,15,0"
                       Grid.Column="2"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Lname}"/>
 
             <!--licence id-->
             <TextBox  x:Name="TxtLicenceId"
@@ -75,7 +76,8 @@
                       Width="290"
                       Margin="15,0,0,0" 
                       Grid.ColumnSpan="1"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Lid}"/>
 
             <!--licence type-->
             <TextBox  x:Name="TxtLicenceType"
@@ -87,7 +89,8 @@
                       Width="290"
                       Margin="0,0,15,0"
                       Grid.Column="2"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Lictype}"/>
 
             <!--licence expiredate-->
             <DatePicker x:Name="TxtLicenceExpireDate"
@@ -97,7 +100,8 @@
                         materialDesign:HintAssist.Hint="Licence Expire Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.ColumnSpan="1"
-                        Margin="15,0,0,0"/>
+                        Margin="15,0,0,0"
+                        Text="{Binding Licexdate}"/>
 
             <!--NIC-->
             <TextBox  x:Name="TxtNIC"
@@ -109,19 +113,19 @@
                       Width="290"
                       Margin="0,0,15,0" 
                       Grid.Column="2"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Nic}"/>
 
-            <!--age-->
-            <TextBox  x:Name="TxtAge"
-                      Grid.Row="4"
-                      materialDesign:HintAssist.Hint="Age"
-                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                      VerticalAlignment="Center" 
-                      FontSize="15" 
-                      Width="290"
-                      Margin="15,0,0,0" 
-                      Grid.ColumnSpan="1"
-                      IsReadOnly="True"/>
+            <!--Birthdate-->
+            <DatePicker x:Name="TxtBirthdate"
+                        Grid.Row="4"
+                        Width="290"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Birth Date"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                        Grid.ColumnSpan="1"
+                        Margin="15,0,0,0"
+                        Text="{Binding Bdate}"/>
 
             <!--mobile number-->
             <TextBox  x:Name="TxtMobileNumber"
@@ -135,6 +139,7 @@
                       Grid.Column="2"
                       IsReadOnly="True"
                       MaxLength="12"
+                      Text="{Binding Mobileno}"
                       materialDesign:TransitionAssist.DisableTransitions="True"/>
 
             <!--address-->
@@ -146,7 +151,8 @@
                       FontSize="15" 
                       Width="600"  
                       Grid.ColumnSpan="2"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Address}"/>
  
 
         </Grid>

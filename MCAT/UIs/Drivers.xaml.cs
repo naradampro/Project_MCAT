@@ -39,8 +39,16 @@ namespace MCAT.UIs
         private void OpenViewDriver(object sender, RoutedEventArgs e)
         {
             Entities.Driver driver = (Entities.Driver)DataGridDrivers.SelectedItem;
-            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.ViewDriver(driver);
-            ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            if (driver == null)
+            {
+                _ = MessageBox.Show("Please select a driver record to view profile.", "No record selected.");
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.ViewDriver(driver);
+                ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            }
+            
         }
     }
 }
