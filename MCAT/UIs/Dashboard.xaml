@@ -4,11 +4,46 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MCAT.UIs"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       Height="650" Width="1250"
       Title="Dashboard">
 
     <Grid Background="White">
-        <Label Content="Dashboard" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Grid Margin="0,0,536,0">
+
+            <Label Content="Saturday 8/28/2021" HorizontalAlignment="Left" Margin="27,47,0,0" VerticalAlignment="Top" Width="233" Height="38" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Left" Margin="29,109,0,0" Text="MIHISARA CABS AND TOURS" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="581" FontSize="35" FontWeight="Medium" Foreground="#ff062044"/>
+            <Button Style="{StaticResource MaterialDesignFlatLightBgButton}" Content="MAKE PAYMENT" HorizontalAlignment="Left" Margin="376,214,0,0" VerticalAlignment="Top" Height="150" Width="324" FontSize="20"/>
+            <Button Style="{StaticResource MaterialDesignFlatLightBgButton}" Content="CHECK VEHICLE AVAILABILITY" HorizontalAlignment="Left" Margin="376,384,0,0" VerticalAlignment="Top" Height="150" Width="324" FontSize="20"/>
+            <Button  Style="{StaticResource MaterialDesignFlatLightBgButton}" Content="RESERVE VEHICLE" HorizontalAlignment="Left" Margin="33,214,0,0" VerticalAlignment="Top" Height="150" Width="324" FontSize="20"/>
+            <Button  Style="{StaticResource MaterialDesignFlatLightBgButton}" Content="CHECK PAYMENT DETAILS" HorizontalAlignment="Left" Margin="33,384,0,0" VerticalAlignment="Top" Height="150" Width="324" FontSize="20"/>
+
+        </Grid>
+
+        <Grid Margin="714,0,0,454">
+            <TextBlock HorizontalAlignment="Left" FontWeight="SemiBold" Text="TODAY RESERVATIONS" Foreground="#FF062044" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="236" Margin="46,50,0,0"/>
+            <DataGrid HorizontalAlignment="Left" Margin="10,98,0,22" Width="495"/>
+        </Grid>
+
+        <Grid Margin="714,196,0,253">
+            <TextBlock HorizontalAlignment="Left" FontWeight="SemiBold" Text="UPCOMING RESERVATIONS" Foreground="#FF062044" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="291" Margin="44,12,0,0"/>
+            <DataGrid HorizontalAlignment="Left" Margin="10,61,0,10" Width="492"/>
+        </Grid>
+
+        <Grid Margin="714,397,0,0">
+            <StackPanel Margin="10,18,288,62" Background="LightGray">
+                <Label Content="20" Width="66" Height="63" FontSize="50"/>
+                <materialDesign:PackIcon Kind="AccountGroup" Height="72" Width="82" HorizontalAlignment="Center"/>
+                <TextBlock Text="Registered Drivers" TextWrapping="Wrap" FontSize="18" Width="154" Height="23" FontWeight="Medium" Margin="-2,4"/>
+            </StackPanel>
+
+            <StackPanel Margin="266,18,34,62" Background="LightGray">
+                <Label Content="25" Width="66" Height="63" FontSize="50"/>
+                <materialDesign:PackIcon Kind="CarMultiple" Height="62" Width="82" HorizontalAlignment="Center" Margin="0,8"/>
+                <TextBlock Text="Number of Vehicles" TextWrapping="Wrap" FontSize="18" Width="165" Height="23" FontWeight="Medium" Margin="-2"/>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </Page>
