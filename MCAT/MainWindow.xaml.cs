@@ -60,7 +60,7 @@ namespace MCAT
             switch (trigger)
             {
                 case "BtnAddVCat":
-                    FramePopup.Content = new UIs.ModalPopups.AddVCategory();
+                    FramePopup.Content = new UIs.ModalPopups.AddVehicle();
                     break;
                 case "BtnAddDriver":
                     FramePopup.Content = new UIs.ModalPopups.AddDriver();
