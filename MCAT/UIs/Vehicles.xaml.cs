@@ -32,7 +32,7 @@ namespace MCAT.UIs
         private void OpenAddVehicle(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.AddVehicle();
-            ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
+            ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
         }
     }
 }

@@ -35,7 +35,7 @@ namespace MCAT.UIs
         private void OpenAddVCat(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.AddCategory();
-            ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
+            ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
         }
             
     }

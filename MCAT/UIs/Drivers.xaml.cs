@@ -33,7 +33,14 @@ namespace MCAT.UIs
         {
             Entities.Driver driver = (Entities.Driver)DataGridDrivers.SelectedItem;
             ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.AddDriver();
-            ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
+            ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+        }
+
+        private void OpenViewDriver(object sender, RoutedEventArgs e)
+        {
+            Entities.Driver driver = (Entities.Driver)DataGridDrivers.SelectedItem;
+            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.ViewDriver(driver);
+            ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
         }
     }
 }
