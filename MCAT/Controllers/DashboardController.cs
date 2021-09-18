@@ -21,20 +21,20 @@ namespace MCAT.Controllers
         ///Number of Registered Drivers
         /// </summary>
 
-        public Driver DriverCount()
+        public int DriverCount()
         {
            String sqlquery = "Select COUNT(*) From " + table2;
-            return null;
+           return DBController.connect().ExecuteScalar<int>(sqlquery);
         }
 
 
         /// <summary>
         ///Number of Registered Vehicles
         /// </summary>
-        public Driver VehicleCount()
+        public int VehicleCount()
         {
             String sqlquery = "Select COUNT(*) From " + table3;
-            return null;
+            return DBController.connect().ExecuteScalar<int>(sqlquery);
         }
 
         /// <summary>
