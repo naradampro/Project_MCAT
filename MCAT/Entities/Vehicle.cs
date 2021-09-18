@@ -36,7 +36,7 @@ namespace MCAT.Entities
 
         }
 
-        public Vehicle(int id, int catid, int vregno, string fuelType, string lsdate, string nsdate, string acsatus, string description, int vstatus)
+        public Vehicle(int id, int catid, int vregno, string fuelType, string lsdate, string nsdate, string acstatus, string description, int vstatus)
         {
             this.id = id;
             this.catid = catid;
@@ -44,19 +44,19 @@ namespace MCAT.Entities
             this.fuelType = fuelType;
             this.lsdate = lsdate;
             this.nsdate = nsdate;
-            this.acsatus = acsatus;
+            this.acstatus = acstatus;
             this.description = description;
             this.vstatus = vstatus;
         }
 
-        public Vehicle(int catid, int vregno, string fuelType, string lsdate, string nsdate, string acsatus, string description, int vstatus)
+        public Vehicle(int catid, int vregno, string fuelType, string lsdate, string nsdate, string acstatus, string description, int vstatus)
         {
             this.catid = catid;
             this.vregno = vregno;
             this.fuelType = fuelType;
             this.lsdate = lsdate;
             this.nsdate = nsdate;
-            this.acsatus = acsatus;
+            this.acstatus = acstatus;
             this.description = description;
             this.vstatus = vstatus;
         }
