@@ -11,7 +11,7 @@
 
     <Grid>
 
-        <Grid Margin="49,12,55,32">
+        <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
 
             <Grid.RowDefinitions>
@@ -50,7 +50,8 @@
                       Width="290"
                       Margin="15,0,0,0"
                       Grid.ColumnSpan="1"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Fanme}"/>
 
             <!--last name-->
             <TextBox  x:Name="TxtLastName"

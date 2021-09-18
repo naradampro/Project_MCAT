@@ -20,9 +20,10 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class ViewDriver : Page
     {
-        public ViewDriver()
+        public ViewDriver(Entities.Driver driver)
         {
             InitializeComponent();
+            FormGrid.DataContext = driver;
         }
     }
 }

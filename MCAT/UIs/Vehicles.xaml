@@ -21,7 +21,7 @@
         </DataGrid>
         <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
                 Content="Add a new Vehicle" Margin="1016,54,20,44"
-                Width="200"
+                Width="200" Click="Button_Click"
                 />
 
     </Grid>

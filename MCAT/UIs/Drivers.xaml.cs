@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MCAT.Controllers;
 
+
 namespace MCAT.UIs
 {
     /// <summary>
@@ -30,7 +31,8 @@ namespace MCAT.UIs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).Popup(sender, e);
+            Entities.Driver driver = (Entities.Driver)DataGridDrivers.SelectedItem;
+            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.ViewDriver(driver);
             ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
         }
     }

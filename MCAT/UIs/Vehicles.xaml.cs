@@ -28,5 +28,11 @@ namespace MCAT.UIs
             InitializeComponent();
             DataGridaVehicles.ItemsSource = cont.GetAll();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.AddVehicle();
+            ((MainWindow)Application.Current.MainWindow).addCat.IsOpen = true;
+        }
     }
 }

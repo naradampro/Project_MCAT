@@ -2,7 +2,7 @@
 
 namespace MCAT.Entities
 {
-    class Driver
+    public class Driver
     {
         //Driver ID
         private int id;
@@ -36,6 +36,11 @@ namespace MCAT.Entities
 
         //Driver Status
         private int dstatus;
+
+        public Driver()
+        {
+
+        }
 
         public int Id { get => id; set => id = value; }
         public string Address { get => address; set => address = value; }
