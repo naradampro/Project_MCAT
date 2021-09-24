@@ -36,5 +36,11 @@ namespace MCAT.UIs
             ((MainWindow)Application.Current.MainWindow).PageView.Content = new ModalPopups.MakePayment();
             ((MainWindow)Application.Current.MainWindow).NavDashboard.IsChecked = false;
         }
+
+        private void OpenReserveVehicle(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new ModalPopups.ReserveVehicle();
+            ((MainWindow)Application.Current.MainWindow).NavDashboard.IsChecked = false;
+        }
     }
 }
