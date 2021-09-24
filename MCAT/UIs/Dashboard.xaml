@@ -51,7 +51,7 @@
                          VerticalAlignment="Center"
                          Height="150" Width="324"
                          FontSize="20"
-                         Grid.Row="0" Grid.Column="1">MAKE PAYMENT</Button>
+                         Grid.Row="0" Grid.Column="1" Click="OpenMakePayment">MAKE PAYMENT</Button>
 
                 <Button  Style="{StaticResource MaterialDesignFlatLightBgButton}"
                          materialDesign:ButtonAssist.CornerRadius="10"

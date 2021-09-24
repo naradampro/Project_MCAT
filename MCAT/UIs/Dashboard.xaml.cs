@@ -30,5 +30,11 @@ namespace MCAT.UIs
             LblVehicleCount.Content = cont.VehicleCount();
             DataGirdTodayReservations.ItemsSource = cont.TodayReservation();
         }
+
+        private void OpenMakePayment(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new ModalPopups.MakePayment();
+            ((MainWindow)Application.Current.MainWindow).NavDashboard.IsChecked = false;
+        }
     }
 }
