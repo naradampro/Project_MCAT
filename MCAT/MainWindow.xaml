@@ -17,7 +17,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Background="White">
+        <Grid Background="#FF062240">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -27,12 +27,12 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
-                <RadioButton x:Uid="0" x:Name="NavDashboard" Grid.Column="0" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="True" Background="White" Height="50" Click="Navigate">
+            
+            <RadioButton x:Uid="0" x:Name="NavDashboard" Grid.Column="0" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="True" Background="#FF062240" Height="50" Click="Navigate" Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="ViewDashboardVariant" Foreground="#FF062240" Height="32" Width="44"/>
+                    <materialDesign:PackIcon Kind="ViewDashboardVariant" Foreground="white" Height="32" Width="44"/>
                         <TextBlock Text="Dashboard"
-                           Foreground="#FF062240"
+                           Foreground="white"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
@@ -40,11 +40,11 @@
                     </StackPanel>
                 </RadioButton>
 
-            <RadioButton x:Uid="1" x:Name="NavCustomers" Grid.Column="1" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+            <RadioButton x:Uid="1" x:Name="NavCustomers" Grid.Column="1" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="#FF062240" Height="50" Click="Navigate" Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Account" Foreground="#FF062240" Height="32" Width="44"/>
+                        <materialDesign:PackIcon Kind="Account" Foreground="white" Height="32" Width="44"/>
                         <TextBlock Text="Customers"
-                           Foreground="#FF062240"
+                           Foreground="white"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
@@ -52,11 +52,11 @@
                     </StackPanel>
             </RadioButton>
 
-            <RadioButton x:Uid="2" x:Name="NavReservations" Grid.Column="2" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+            <RadioButton x:Uid="2" x:Name="NavReservations" Grid.Column="2" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="#FF062240" Height="50" Click="Navigate" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Book" Foreground="#FF062240" Height="32" Width="Auto"/>
+                    <materialDesign:PackIcon Kind="Book" Foreground="white" Height="32" Width="Auto"/>
                     <TextBlock Text="Reservations"
-                           Foreground="#FF062240"
+                           Foreground="white"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
@@ -64,11 +64,11 @@
                 </StackPanel>
             </RadioButton>
 
-            <RadioButton x:Uid="3" x:Name="NavDrivers" Grid.Column="3" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+            <RadioButton x:Uid="3" x:Name="NavDrivers" Grid.Column="3" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="#FF062240" Height="50" Click="Navigate" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Steering" Foreground="#FF062240" Height="32" Width="44"/>
+                    <materialDesign:PackIcon Kind="Steering" Foreground="white" Height="32" Width="44"/>
                     <TextBlock Text="Drivers"
-                           Foreground="#FF062240"
+                           Foreground="white"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
@@ -76,11 +76,11 @@
                 </StackPanel>
             </RadioButton>
 
-            <RadioButton x:Uid="4" x:Name="NavVehicles" Grid.Column="4" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+            <RadioButton x:Uid="4" x:Name="NavVehicles" Grid.Column="4" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="#FF062240" Height="50" Click="Navigate" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Cab" Foreground="#FF062240" Height="32" Width="Auto"/>
+                    <materialDesign:PackIcon Kind="Cab" Foreground="white" Height="32" Width="Auto"/>
                     <TextBlock Text="Vehicles"
-                           Foreground="#FF062240"
+                           Foreground="white"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
@@ -89,11 +89,11 @@
             </RadioButton>
 
 
-            <RadioButton x:Uid="5" x:Name="NavVCat" Grid.Column="5" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="White" Height="50" Click="Navigate">
+            <RadioButton x:Uid="5" x:Name="NavVCat" Grid.Column="5" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="#FF062240" Height="50" Click="Navigate" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="CarMultiple" Foreground="#FF062240" Height="32" Width="Auto"/>
+                    <materialDesign:PackIcon Kind="CarMultiple" Foreground="white" Height="32" Width="Auto"/>
                     <TextBlock Text="Vehicle Categories"
-                           Foreground="#FF062240"
+                           Foreground="white"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontFamily="Fonts/#Dosis"
@@ -114,7 +114,7 @@
                 <Grid Width="800" Height="600" HorizontalAlignment="Center">
                     <Frame Margin="20,20,20,60" x:Name="FramePopup"  NavigationUIVisibility="Hidden"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20,10">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatAccentButton}" Margin="4" VerticalAlignment="Center">
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
                             Close
                         </Button>
                     </StackPanel>

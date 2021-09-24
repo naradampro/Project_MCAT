@@ -11,7 +11,7 @@ namespace MCAT.Entities
         private int catid;
 
         //Vehicle Register Number
-        private int vregno;
+        private string vregno;
 
         //Fuel Type of the vehicle
         private string fuelType;
@@ -31,12 +31,17 @@ namespace MCAT.Entities
         //Status
         private int vstatus;
 
+        private string model;
+
+        private VCategory category;
+        private Driver driver;
+
         public Vehicle()
         {
 
         }
 
-        public Vehicle(int id, int catid, int vregno, string fuelType, string lsdate, string nsdate, string acstatus, string description, int vstatus)
+        public Vehicle(int id, int catid, string vregno, string fuelType, string lsdate, string nsdate, string acstatus, string description, int vstatus)
         {
             this.id = id;
             this.catid = catid;
@@ -49,7 +54,7 @@ namespace MCAT.Entities
             this.vstatus = vstatus;
         }
 
-        public Vehicle(int catid, int vregno, string fuelType, string lsdate, string nsdate, string acstatus, string description, int vstatus)
+        public Vehicle(int catid, string vregno, string fuelType, string lsdate, string nsdate, string acstatus, string description, int vstatus)
         {
             this.catid = catid;
             this.vregno = vregno;
@@ -63,13 +68,16 @@ namespace MCAT.Entities
 
         public int Id { get => id; set => id = value; }
         public int Catid { get => catid; set => catid = value; }
-        public int Vregno { get => vregno; set => vregno = value; }
+        public string Vregno { get => vregno; set => vregno = value; }
         public string FuelType { get => fuelType; set => fuelType = value; }
         public string Lsdate { get => lsdate; set => lsdate = value; }
         public string Nsdate { get => nsdate; set => nsdate = value; }
         public string Acstatus { get => acstatus; set => acstatus = value; }
         public string Description { get => description; set => description = value; }
         public int Vstatus { get => vstatus; set => vstatus = value; }
+        public string Model { get => model; set => model = value; }
+        internal VCategory Category { get => category; set => category = value; }
+        public Driver Driver { get => driver; set => driver = value; }
     }
        
 }

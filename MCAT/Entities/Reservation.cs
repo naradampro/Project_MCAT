@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace MCAT.Entities
 {
     class Reservation
@@ -19,10 +21,10 @@ namespace MCAT.Entities
         private string pickuploc;
 
         //Pickup Date
-        private string pickupdate;
+        private DateTime pickupdate;
 
         //Pickup Time
-        private string pickuptime;
+        private TimeSpan pickuptime;
 
         //Number of Days
         private int days;
@@ -36,7 +38,8 @@ namespace MCAT.Entities
         //Status
         private int rstatus;
 
-        
+        private Customer customer;
+        private Vehicle vehicle;
 
 
         //default constructors
@@ -45,51 +48,21 @@ namespace MCAT.Entities
 
         }
 
-        //parameterized constructors
-        public Reservation(int id, int cid, int vid, int did, string pickuploc, string pickupdate, string pickuptime, int days, double distance,string description, int rstatus)
-        {
-            this.id=id;
-            this.cid=cid;
-            this.vid=vid;
-            this.did=did;
-            this.pickuploc=pickuploc;
-            this.pickupdate=pickupdate;
-            this.pickuptime=pickuptime;
-            this.days=days;
-            this.distance=distance;
-            this.description=description;
-            this.rstatus=rstatus;
-        }
-
-
-        //parameterized constructors without id
-        public Reservation( int cid, int vid, int did, string pickuploc, string pickupdate, string pickuptime, int days, double distance,string description, int rstatus)
-        {
-            
-            this.cid=cid;
-            this.vid=vid;
-            this.did=did;
-            this.pickuploc=pickuploc;
-            this.pickupdate=pickupdate;
-            this.pickuptime=pickuptime;
-            this.days=days;
-            this.distance=distance;
-            this.description=description;
-            this.rstatus=rstatus;
-        }
-
-
         public int Id { get => id; set => id = value; }
-        public int Cid { get => cid; set => cid = value; }
-        public int Vid { get => vid; set => vid = value; }
-        public int Did { get => did; set => did = value; }
+        public string CName { get => customer.Fname+" "+customer.Lname;}
+        public int CMobileno { get => customer.Mobileno; }
+        public string Vmodel { get => vehicle.Model; }
+        public string Catname { get => vehicle.Category.Catname; }
+        public string DName { get => vehicle.Driver.Fname + " " + Vehicle.Driver.Lname; }
         public string Pickuploc { get => pickuploc; set => pickuploc = value; }
-        public string Pickupdate { get => pickupdate; set => pickupdate = value; }
-        public string Pickuptime { get => pickuptime; set => pickuptime = value; }
+        public DateTime Pickupdate { get => pickupdate; set => pickupdate = value; }
+        public TimeSpan Pickuptime { get => pickuptime; set => pickuptime = value; }
         public int Days { get => days; set => days = value; }
         public double Distance { get => distance; set => distance = value; }
         public string Description { get => description; set => description = value; }
         public int Rstatus { get => rstatus; set => rstatus = value; }
+        internal Customer Customer { get => customer; set => customer = value; }
+        internal Vehicle Vehicle { get => vehicle; set => vehicle = value; }
     }
 
 }
