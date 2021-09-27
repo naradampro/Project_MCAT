@@ -47,7 +47,7 @@ namespace MCAT.Controllers
         /// <returns>A <c>List</c> of Customers</returns>
         public List<Reservation> GetAll()
         {
-            string sqlquery = "SELECT r.id, r.pickuploc, c.fname, c.lname, c.mobileno, v.model, cat.catname, d.fname, d.lname, d.mobileno FROM reservation r INNER JOIN customer c ON r.cid = c.id INNER JOIN vehicle v ON r.vid = v.id INNER JOIN vcategory cat ON v.catid = cat.id INNER JOIN driver d ON v.did = d.id";
+            string sqlquery = "SELECT r.id, r.pickuploc, r.pickupdate, r.pickuptime, c.fname, c.lname, c.mobileno, v.model, cat.catname, d.fname, d.lname, d.mobileno FROM reservation r INNER JOIN customer c ON r.cid = c.id INNER JOIN vehicle v ON r.vid = v.id INNER JOIN vcategory cat ON v.catid = cat.id INNER JOIN driver d ON v.did = d.id";
             return DBController.connect().Query<Reservation, Customer, Vehicle, VCategory, Driver, Reservation>(sqlquery,
                 (reserv, cust, vehic, vcat, driv) => { 
                     reserv.Customer = cust;

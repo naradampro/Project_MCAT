@@ -43,19 +43,18 @@
 
 
             <!--Vehicle Category Filter-->
-            <StackPanel x:Name="ComboVCategory"
-                        Grid.Column="2"
+            <StackPanel Grid.Column="2"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"
                         Width="290"
                         Margin="0">
 
                 <ComboBox Foreground="Gray"
+                          x:Name="ComboVCategory"
+                          DisplayMemberPath="Catname"
+                          materialDesign:HintAssist.Hint="Select vehicle category."
                           FontSize="15"
                           materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}">
-                    <ComboBoxItem IsSelected="True"
-                                  Content="Vehicle Category" />
-                    <ComboBoxItem Content="Economy" />
                 </ComboBox>
             </StackPanel>
             

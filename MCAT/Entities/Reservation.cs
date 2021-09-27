@@ -55,7 +55,7 @@ namespace MCAT.Entities
         public string Catname { get => vehicle.Category.Catname; }
         public string DName { get => vehicle.Driver.Fname + " " + Vehicle.Driver.Lname; }
         public string Pickuploc { get => pickuploc; set => pickuploc = value; }
-        public DateTime Pickupdate { get => pickupdate; set => pickupdate = value; }
+        public DateTime Pickupdate { get => pickupdate.Date; set => pickupdate = value; }
         public TimeSpan Pickuptime { get => pickuptime; set => pickuptime = value; }
         public int Days { get => days; set => days = value; }
         public double Distance { get => distance; set => distance = value; }

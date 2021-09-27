@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MCAT.Controllers;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -20,9 +21,11 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class AddVehicle : Page
     {
+        VCategoryController cat = new VCategoryController();
         public AddVehicle()
         {
             InitializeComponent();
+            ComboCategory.ItemsSource = cat.GetAll();
         }
     }
 }

@@ -35,7 +35,7 @@
             Width="200"
             Click="OpenUpdateReservation">
             <StackPanel Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ViewCompactOutline" Height="20"/>
+                <materialDesign:PackIcon Kind="Update" Height="20"/>
                 <TextBlock Margin="10,0">Update Selected</TextBlock>
             </StackPanel>
         </Button>
