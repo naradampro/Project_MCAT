@@ -1,7 +1,7 @@
 ﻿
 namespace MCAT.Entities
 {
-    class Vehicle
+    public class Vehicle
     {
 
         //Vehicle ID

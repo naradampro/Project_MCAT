@@ -1,7 +1,7 @@
 ﻿
 namespace MCAT.Entities
 {
-    class Payment
+    public class Payment
     {
         //Payment ID
         private int id;

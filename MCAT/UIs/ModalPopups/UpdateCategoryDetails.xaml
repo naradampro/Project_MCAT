@@ -12,7 +12,7 @@
 
     <Grid>
 
-        <Grid Margin="49,12,55,32">
+        <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
 
             <Grid.RowDefinitions>
@@ -56,7 +56,8 @@
                       VerticalAlignment="Center"
                       Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Catname, Mode=OneTime}"/>
 
 
             <!--Passenger Capacity-->
@@ -67,7 +68,8 @@
                       VerticalAlignment="Center"
                       Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Pcapacity, Mode=OneTime}"/>
 
 
             <!--No. Vehicles-->
@@ -78,7 +80,8 @@
                       VerticalAlignment="Center" 
                       Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Avaivehicles, Mode=OneTime}"/>
 
 
             <!--Cost per 1km-->
@@ -89,7 +92,8 @@
                       VerticalAlignment="Center"
                       Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Costonekm, Mode=OneTime}"/>
 
 
             <!--Cost per day-->
@@ -100,7 +104,8 @@
                       VerticalAlignment="Center" 
                       Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Costoneday, Mode=OneTime}"/>
 
 
             <!--Save Changes Button-->

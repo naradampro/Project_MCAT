@@ -3,7 +3,7 @@ using System;
 
 namespace MCAT.Entities
 {
-    class Reservation
+    public class Reservation
     {
         //Reservation ID
         private int id;
@@ -50,7 +50,7 @@ namespace MCAT.Entities
 
         public int Id { get => id; set => id = value; }
         public string CName { get => customer.Fname+" "+customer.Lname;}
-        public int CMobileno { get => customer.Mobileno; }
+        public int CMobileno { get => this.customer.Mobileno; }
         public string Vmodel { get => vehicle.Model; }
         public string Catname { get => vehicle.Category.Catname; }
         public string DName { get => vehicle.Driver.Fname + " " + Vehicle.Driver.Lname; }

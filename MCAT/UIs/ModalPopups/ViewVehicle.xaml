@@ -11,7 +11,7 @@
 
     <Grid>
 
-        <Grid Margin="49,12,55,32">
+        <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
 
             <Grid.RowDefinitions>
@@ -38,7 +38,8 @@
                        HorizontalAlignment="Center" 
                        Grid.RowSpan="2" 
                        Margin="0,50,0,0"
-                       Grid.ColumnSpan="2"/>
+                       Grid.ColumnSpan="2"
+                       />
 
             <!--category-->
             <TextBox  x:Name="TxtCategory"
@@ -50,7 +51,8 @@
                       IsReadOnly="True"
                       Width="290"
                       Margin="15,0,0,0"
-                      Grid.Column="0"/>
+                      Grid.Column="0"
+                      Text="{Binding Category}"/>
 
             <!--model-->
             <TextBox  x:Name="TxtModel"
@@ -62,7 +64,8 @@
                       IsReadOnly="True"
                       Width="290"
                       Margin="0,0,15,0"
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                      Text="{Binding Model}"/>
 
             <!--registration no-->
             <TextBox  x:Name="TxtVehicleRegNo"
@@ -74,7 +77,8 @@
                       IsReadOnly="True"
                       Width="290"
                       Margin="15,0,0,0" 
-                      Grid.Column="0"/>
+                      Grid.Column="0"
+                      Text="{Binding Vregno}"/>
 
             <!--passenger capacity-->
             <TextBox  x:Name="TxtPassengerCapacity"
@@ -86,7 +90,8 @@
                       IsReadOnly="True"
                       Width="290"
                       Margin="0,0,15,0"
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                      />
 
             <!--fuel type-->
             <TextBox  x:Name="TxtFuelType"
@@ -98,7 +103,8 @@
                       IsReadOnly="True"
                       Width="290"
                       Margin="15,0,0,0" 
-                      Grid.Column ="0"/>
+                      Grid.Column ="0"
+                      Text="{Binding FuelType}"/>
 
             <!--AC status-->
             <TextBox  x:Name="TxtACStatus"
@@ -109,7 +115,8 @@
                       FontSize="15" 
                       Width="290"
                       Margin="0,0,15,0" 
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                      Text="{Binding Acstatus}"/>
 
             <!--last service date-->
             <DatePicker x:Name="TxtLSDate"
@@ -119,7 +126,8 @@
                         materialDesign:HintAssist.Hint="Last Service Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.Column ="0"
-                        Margin="15,0,0,0"/>
+                        Margin="15,0,0,0"
+                        Text="{Binding Lsdate}"/>
 
             <!--next service date-->
             <DatePicker x:Name="TxtNSDate"
@@ -129,7 +137,8 @@
                         materialDesign:HintAssist.Hint="Next Service Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.Column="2"
-                        Margin="0,0,15,0"/>
+                        Margin="0,0,15,0"
+                        Text="{Binding Nsdate}"/>
 
             <!--description-->
             <TextBox  x:Name="TxtDescription"
@@ -139,7 +148,8 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600"  
-                      Grid.ColumnSpan="2"/> 
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Description}"/> 
 
         </Grid>
 

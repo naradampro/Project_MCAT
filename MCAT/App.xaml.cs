@@ -13,5 +13,6 @@ namespace MCAT
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

@@ -28,32 +28,27 @@
             </Grid.ColumnDefinitions>
 
             <!--Search Box-->
-            <TextBox x:Name="TxtSearch"
-                     Style="{StaticResource MaterialDesignFilledTextBox}"
-                     AcceptsReturn="True"
-                     TextWrapping="Wrap"
-                     MaxWidth="420"
-                     materialDesign:HintAssist.Hint="Date"
-                     FontSize="15"
-                     IsEnabled="{Binding IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Margin="51,17,9,16"/>
+            <DatePicker x:Name="TxtSearch"
+                     Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                     materialDesign:HintAssist.Hint="Select the reservation date."
+                     FontSize="15" Margin="0"/>
 
             <!--Filter Button-->
             <Button x:Name="btnFilter"
                     Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                    Content="Filter"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+                    Content="Search"                   
                     Width="150"
                     Grid.Column="1"
-                    HorizontalAlignment="Left" Margin="12,31,0,17"/>
+                    HorizontalAlignment="Left" Margin="20"/>
 
 
             <!--Vehicle Category Filter-->
             <StackPanel x:Name="ComboVCategory"
                         Grid.Column="2"
                         VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
+                        HorizontalAlignment="Right"
                         Width="290"
-                        Margin="34,15,0,0">
+                        Margin="0">
 
                 <ComboBox Foreground="Gray"
                           FontSize="15"
@@ -69,12 +64,12 @@
 
             <!--Button Next-->
             <Button x:Name="btnNext"
-                    Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                    Content="Next"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+                    Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                    Content="Book this vehicle"                  
                     Grid.Row="2" 
                     Grid.Column="2"
-                    Width="100"/>
+                    HorizontalAlignment="Right"
+                    IsEnabled="False"/>
             
         </Grid>
 

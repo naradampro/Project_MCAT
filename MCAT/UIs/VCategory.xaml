@@ -28,12 +28,37 @@
 
         </DataGrid>
 
-        <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                Content="Add a Category"
-                Width="200" Click="OpenAddVCat" Margin="1030,80,20,18"
-                x:Name="BtnAddVCat"/>
+        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                Margin="1015,50,20,50"
+                Width="200"
+                Click="OpenAddVCat">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Plus" Height="20"/>
+                <TextBlock Margin="10,0">Add a new category</TextBlock>
+            </StackPanel>
+        </Button>
 
-        
-        
+        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+            Margin="820,50,240,50"
+            Width="200"
+            Click="OpenViewVcat">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ViewCompactOutline" Height="20"/>
+                <TextBlock Margin="10,0">View Selected</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+            Margin="610,50,443,48"
+            Width="200"
+            Click="OpenUpdateVcat">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ViewCompactOutline" Height="20"/>
+                <TextBlock Margin="10,0">Update Selected</TextBlock>
+            </StackPanel>
+        </Button>
+
+
+
     </Grid>
 </Page>

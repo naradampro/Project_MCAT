@@ -12,7 +12,7 @@
 
     <Grid>
 
-        <Grid Margin="49,12,55,32">
+        <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
 
             <Grid.RowDefinitions>
@@ -59,7 +59,8 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Id}"/>
 
             <!--Category Name-->
             <TextBox  x:Name="TxtCategoryName"
@@ -70,7 +71,8 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Catname}"/>
 
 
             <!--Passenger Capacity-->
@@ -82,7 +84,8 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Pcapacity}"/>
 
 
             <!--No. Vehicles-->
@@ -94,7 +97,8 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Avaivehicles}"/>
 
 
             <!--Cost per 1km-->
@@ -106,7 +110,8 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      IsReadOnly="True"/>
+                      IsReadOnly="True"
+                      Text="{Binding Costonekm}"/>
 
 
             <!--Cost per day-->
@@ -118,9 +123,8 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      IsReadOnly="True"/>
-
-
+                      IsReadOnly="True"
+                      Text="{Binding Costoneday}"/>
         </Grid>
     </Grid>
 </Page>

@@ -1,7 +1,7 @@
 ﻿
 namespace MCAT.Entities
 {
-    class Customer
+    public class Customer
     {
         //customer id
         private int id;

@@ -28,4 +28,10 @@
 	<ItemGroup>
 	  <Resource Include="UIs\Icons\mcatlogo.png" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="UIs\Payments.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	  </Page>
+	</ItemGroup>
 </Project>

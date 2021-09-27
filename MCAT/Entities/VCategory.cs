@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MCAT.Entities
 {
-    class VCategory
+    public class VCategory
     {
         //Vehicle Category ID
         private int id;

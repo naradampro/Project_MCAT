@@ -20,9 +20,10 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class UpdateReservation : Page
     {
-        public UpdateReservation()
+        public UpdateReservation(Entities.Reservation reservation)
         {
             InitializeComponent();
+            FormGrid.DataContext = reservation;
         }
     }
 }

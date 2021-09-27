@@ -91,7 +91,7 @@
 
             <RadioButton x:Uid="5" x:Name="NavVCat" Grid.Column="5" Style="{StaticResource MaterialDesignTabRadioButton}" IsChecked="False" Background="#FF062240" Height="50" Click="Navigate" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="CarMultiple" Foreground="white" Height="32" Width="Auto"/>
+                    <materialDesign:PackIcon Kind="CarMultiple" Foreground="white" Height="32" Width="32"/>
                     <TextBlock Text="Vehicle Categories"
                            Foreground="white"
                            VerticalAlignment="Center"

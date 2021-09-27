@@ -34,5 +34,35 @@ namespace MCAT.UIs
             ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.AddVehicle();
             ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
         }
+
+        private void OpenViewVehicles(object sender, RoutedEventArgs e)
+        {
+            Entities.Vehicle vehicle = (Entities.Vehicle)DataGridaVehicles.SelectedItem;
+            if (vehicle == null)
+            {
+                _ = MessageBox.Show("Please select a reservation record to view profile.", "No record selected.");
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.ViewVehicle(vehicle);
+                ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            }
+
+        }
+
+        private void OpenUpdateVehicle(object sender, RoutedEventArgs e)
+        {
+            Entities.Vehicle vehicle = (Entities.Vehicle)DataGridaVehicles.SelectedItem;
+            if (vehicle == null)
+            {
+                _ = MessageBox.Show("Please select a reservation record to view profile.", "No record selected.");
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.UpdateVehicle(vehicle);
+                ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            }
+
+        }
     }
 }

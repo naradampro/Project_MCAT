@@ -11,7 +11,7 @@
 
     <Grid>
 
-        <Grid Margin="49,12,55,32" Background="White">
+        <Grid Margin="49,12,55,32" Background="White" x:Name="FormGrid">
 
 
             <Grid.RowDefinitions>
@@ -56,7 +56,8 @@
                       Width="290"
                       Margin="15,0,0,0" 
                       IsReadOnly="True"
-                      Grid.Column ="0"/>
+                      Grid.Column ="0"
+                      Text="{Binding CName, Mode=OneWay}"/>
 
             <!--customer mobile number-->
             <TextBox  x:Name="TxtCMobileNo"
@@ -68,7 +69,8 @@
                       Width="290"
                       Margin="0,0,15,0"
                       IsReadOnly="True"
-                      Grid.Column ="1"/>
+                      Grid.Column ="1"
+                      Text="{Binding CMobileno, Mode=OneWay}"/>
 
             <!--driver name-->
             <TextBox  x:Name="TxtDName"
@@ -80,7 +82,8 @@
                       Width="290"
                       Margin="15,0,0,0" 
                       IsReadOnly="True"
-                      Grid.Column="0"/>
+                      Grid.Column="0"
+                      Text="{Binding DName, Mode=OneWay}"/>
 
             <!--licence id-->
             <TextBox  x:Name="TxtDLicenceId"
@@ -116,7 +119,8 @@
                       Width="290"
                       Margin="0,0,15,0"
                       IsReadOnly="True"
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                     Text="{Binding Pickupdate}"/>
 
             <!--location-->
             <TextBox  x:Name="TxtLocation"
@@ -128,7 +132,8 @@
                       Width="290"
                       Margin="15,0,0,0" 
                       IsReadOnly="True"
-                      Grid.Column="0"/>
+                      Grid.Column="0"
+                      Text="{Binding Pickuploc}"/>
 
             <!--total distance-->
             <TextBox  x:Name="TextTotalDis"
@@ -140,7 +145,8 @@
                       Width="290"
                       Margin="0,0,15,0"  
                       IsReadOnly="True"
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                      Text="{Binding Distance}"/>
 
             <!--number of days-->
             <TextBox  x:Name="TxtNoDays"
@@ -152,7 +158,8 @@
                       Width="290"
                       Margin="15,0,0,0"
                       IsReadOnly="True"
-                      Grid.Column ="0"/>
+                      Grid.Column ="0"
+                      Text="{Binding Days}"/>
 
             <!--amount-->
             <TextBox  x:Name="TxtAmount" 

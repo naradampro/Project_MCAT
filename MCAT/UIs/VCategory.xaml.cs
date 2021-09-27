@@ -37,6 +37,36 @@ namespace MCAT.UIs
             ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.AddCategory();
             ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
         }
-            
+
+        private void OpenViewVcat(object sender, RoutedEventArgs e)
+        {
+            Entities.VCategory vcat = (Entities.VCategory)DataGridVcat.SelectedItem;
+            if (vcat == null)
+            {
+                _ = MessageBox.Show("Please select a vehicle category record to view profile.", "No record selected.");
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.ViewCategoryDetails(vcat);
+                ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            }
+
+        }
+
+        private void OpenUpdateVcat(object sender, RoutedEventArgs e)
+        {
+            Entities.VCategory vcat = (Entities.VCategory)DataGridVcat.SelectedItem;
+            if (vcat == null)
+            {
+                _ = MessageBox.Show("Please select a vehicle category record to view profile.", "No record selected.");
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.UpdateCategoryDetails(vcat);
+                ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            }
+
+        }
+
     }
 }

@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:MCAT.UIs"
+      xmlns:local="clr-namespace:MCAT.UIs" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       Height="650" Width="1250"
       Title="Reservations">
@@ -19,10 +19,26 @@
             </DataGrid.BindingGroup>
 
         </DataGrid>
-        <Button Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                Content="New Reservation" Margin="1016,54,20,44"
-                Width="200" Click="OpenAddReservation"
-                />
+
+        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+            Margin="1015,50,20,50"
+            Width="200"
+            Click="OpenViewReservation">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ViewCompactOutline" Height="20"/>
+                <TextBlock Margin="10,0">View Selected</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+            Margin="820,50,240,50"
+            Width="200"
+            Click="OpenUpdateReservation">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ViewCompactOutline" Height="20"/>
+                <TextBlock Margin="10,0">Update Selected</TextBlock>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Page>

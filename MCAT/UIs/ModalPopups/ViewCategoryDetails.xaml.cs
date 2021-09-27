@@ -20,9 +20,10 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class ViewCategoryDetails : Page
     {
-        public ViewCategoryDetails()
+        public ViewCategoryDetails(Entities.VCategory vcat)
         {
             InitializeComponent();
+            FormGrid.DataContext = vcat;
         }
     }
 }

@@ -26,9 +26,17 @@ namespace MCAT.UIs
         {
             InitializeComponent();
             LblTodayDate.Content = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-            LblDriverCount.Content = cont.DriverCount();
-            LblVehicleCount.Content = cont.VehicleCount();
-            DataGirdTodayReservations.ItemsSource = cont.TodayReservation();
+            try
+            {
+                LblDriverCount.Content = cont.DriverCount();
+                LblVehicleCount.Content = cont.VehicleCount();
+                DataGirdTodayReservations.ItemsSource = cont.TodayReservation();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("MySQL Database connection not found. Plese check the databse connection and try again.", "MCAT Database not found.", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Shutdown();
+            }
         }
 
         private void OpenMakePayment(object sender, RoutedEventArgs e)
@@ -40,6 +48,12 @@ namespace MCAT.UIs
         private void OpenReserveVehicle(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).PageView.Content = new ModalPopups.ReserveVehicle();
+            ((MainWindow)Application.Current.MainWindow).NavDashboard.IsChecked = false;
+        }
+
+        private void OpenPayments(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new Payments();
             ((MainWindow)Application.Current.MainWindow).NavDashboard.IsChecked = false;
         }
     }

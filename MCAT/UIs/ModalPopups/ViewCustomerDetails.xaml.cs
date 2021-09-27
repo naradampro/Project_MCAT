@@ -20,9 +20,10 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class ViewCustomerDetails : Page
     {
-        public ViewCustomerDetails()
+        public ViewCustomerDetails(Entities.Customer customer)
         {
             InitializeComponent();
+            FormGrid.DataContext = customer;
         }
     }
 }

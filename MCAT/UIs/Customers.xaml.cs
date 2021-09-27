@@ -39,5 +39,33 @@ namespace MCAT.UIs
             ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.AddCustomer();
             ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
         }
+
+        private void OpenViewCustomers(object sender, RoutedEventArgs e)
+        {
+            Customer customer = (Customer)DataGridCustomers.SelectedItem;
+            if (customer == null)
+            {
+                _ = MessageBox.Show("Please select a customer record to view profile.", "No record selected.");
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.ViewCustomerDetails(customer);
+                ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            }
+        }
+
+        private void OpenUpdateCustomer(object sender, RoutedEventArgs e)
+        {
+            Customer customer = (Customer)DataGridCustomers.SelectedItem;
+            if (customer == null)
+            {
+                _ = MessageBox.Show("Please select a customer record to view profile.", "No record selected.");
+            }
+            else
+            {
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.UpdateCustomerDetails(customer);
+                ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
+            }
+        }
     }
 }
