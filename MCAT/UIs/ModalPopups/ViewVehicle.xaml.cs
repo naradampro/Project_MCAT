@@ -23,7 +23,7 @@ namespace MCAT.UIs.ModalPopups
         public ViewVehicle(Entities.Vehicle vehicle)
         {
             InitializeComponent();
-            FormGrid.DataContext = vehicle;
+            FormGrid.DataContext = vehicle;            
         }
     }
 }

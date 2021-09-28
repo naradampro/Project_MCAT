@@ -56,6 +56,7 @@ namespace MCAT.Entities
             this.costoneday=costoneday;
         }
 
+        //Core Properties
         public int Id { get => id; set => id = value; }
         public int Pcapacity { get => pcapacity; set => pcapacity = value; }
         public int Avaivehicles { get => avaivehicles; set => avaivehicles = value; }

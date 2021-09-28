@@ -30,7 +30,11 @@ namespace MCAT.UIs
             {
                 LblDriverCount.Content = cont.DriverCount();
                 LblVehicleCount.Content = cont.VehicleCount();
-                DataGirdTodayReservations.ItemsSource = cont.TodayReservation();
+                
+                foreach (var record in cont.TodayReservation())
+                {
+                    DataGirdTodayReservations.Items.Add(record);
+                }
             }
             catch (Exception e)
             {

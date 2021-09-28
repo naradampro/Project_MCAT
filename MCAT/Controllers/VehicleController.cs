@@ -47,8 +47,13 @@ namespace MCAT.Controllers
         /// <returns>A <c>List</c> of Customers</returns>
         public List<Vehicle> GetAll()
         {
-            string sqlquery = "Select * From " + table;
-            return DBController.connect().Query<Vehicle>(sqlquery).ToList();
+            string sqlquery = "SELECT * FROM vehicle v INNER JOIN vcategory cat ON v.catid = cat.id INNER JOIN driver d ON v.did = d.id";
+            return DBController.connect().Query<Vehicle, VCategory, Driver, Vehicle>(sqlquery,
+                (vehic, vcat, driv) => {
+                    vehic.Category = vcat;
+                    vehic.Driver = driv;
+                    return vehic;
+                }, splitOn: "id,id").ToList();
         }
 
 

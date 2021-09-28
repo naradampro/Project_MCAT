@@ -75,6 +75,7 @@ namespace MCAT.Entities
             this.dstatus = dstatus;
         }
 
+        //Core Properties
         public int Id { get => id; set => id = value; }
         public string Address { get => address; set => address = value; }
         public int Mobileno { get => mobileno; set => mobileno = value; }
@@ -87,6 +88,20 @@ namespace MCAT.Entities
         public DateTime Licexdate { get => licexdate.Date; set => licexdate = value; }
         public DateTime Bdate { get => bdate; set => bdate = value; }
 
+
+        //Derived Properties
         public string Name { get => fname + " " + lname; }
+        public int Age { get => getAge(); }
+
+
+        public int getAge()
+        {
+            var today = DateTime.Today;
+
+            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
+            var b = (bdate.Year * 100 + bdate.Month) * 100 + bdate.Day;
+
+            return (a - b) / 10000;
+        }
     }
 }

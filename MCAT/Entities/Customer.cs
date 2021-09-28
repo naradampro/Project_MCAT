@@ -24,8 +24,6 @@ namespace MCAT.Entities
         //Customer NIC
         private string nic;
         
-        
-
 
         //default constructor
         public Customer()
@@ -57,16 +55,19 @@ namespace MCAT.Entities
             this.nic=nic;
         }
 
-        
+        //Core Properties
         public int Id { get => id; set => id = value; }
         public string Address { get => address; set => address = value; }
         public string Fname { get => fname; set => fname = value;}
-        public string Lname { get => lname; set => lname = value;}
-        public string Name { get => fname + " " + lname; }
+        public string Lname { get => lname; set => lname = value;}        
         public int Mobileno { get => mobileno; set => mobileno = value; }
         public int Cstatus { get => cstatus; set => cstatus = value; }
         public string Nic { get => nic; set => nic = value; }
+
+        //Derived Properties
+        public string Name { get => fname + " " + lname; }
+
     }
 
-    
+
 }

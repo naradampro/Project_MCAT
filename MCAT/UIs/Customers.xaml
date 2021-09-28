@@ -20,13 +20,11 @@
                   VerticalScrollBarVisibility="Auto">
             <!-- Column header Text and Data binding -->
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Customer ID" Binding="{Binding Id}" Width="100"/>
-                <DataGridTextColumn Header="First Name" Binding="{Binding Fname}" Width="150"/>
-                <DataGridTextColumn Header="Last Name" Binding="{Binding Lname}" Width="150"/>
-                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="300"/>
-                <DataGridTextColumn Header="Mobile Number" Binding="{Binding Mobileno}" Width="100"/>
-                <DataGridTextColumn Header="NIC" Binding="{Binding Nic}" Width="100"/>
-                <DataGridTextColumn Header="Options" Width="*"/>
+                <DataGridTextColumn Header="Customer ID" Binding="{Binding Id}" Width="150"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=OneWay}" Width="200"/>
+                <DataGridTextColumn Header="Mobile Number" Binding="{Binding Mobileno}" Width="150"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="350"/>                
+                <DataGridTextColumn Header="NIC" Binding="{Binding Nic}" Width="*"/>                
             </DataGrid.Columns>
 
         </DataGrid>

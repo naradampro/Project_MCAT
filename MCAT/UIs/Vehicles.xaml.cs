@@ -26,7 +26,10 @@ namespace MCAT.UIs
         public Vehicles()
         {
             InitializeComponent();
-            DataGridaVehicles.ItemsSource = cont.GetAll();
+            foreach (var record in cont.GetAll())
+            {
+                DataGridaVehicles.Items.Add(record);
+            }
         }
 
         private void OpenAddVehicle(object sender, RoutedEventArgs e)

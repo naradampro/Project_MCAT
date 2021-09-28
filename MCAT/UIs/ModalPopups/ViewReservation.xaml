@@ -57,7 +57,7 @@
                       Margin="15,0,0,0" 
                       IsReadOnly="True"
                       Grid.Column ="0"
-                      Text="{Binding CName, Mode=OneWay}"/>
+                      Text="{Binding Customer.Name, Mode=OneWay}"/>
 
             <!--customer mobile number-->
             <TextBox  x:Name="TxtCMobileNo"
@@ -70,7 +70,7 @@
                       Margin="0,0,15,0"
                       IsReadOnly="True"
                       Grid.Column ="1"
-                      Text="{Binding CMobileno, Mode=OneWay}"/>
+                      Text="{Binding Customer.Mobileno}"/>
 
             <!--driver name-->
             <TextBox  x:Name="TxtDName"
@@ -83,19 +83,20 @@
                       Margin="15,0,0,0" 
                       IsReadOnly="True"
                       Grid.Column="0"
-                      Text="{Binding DName, Mode=OneWay}"/>
+                      Text="{Binding Vehicle.Driver.Name, Mode=OneWay}"/>
 
             <!--licence id-->
-            <TextBox  x:Name="TxtDLicenceId"
+            <TextBox  x:Name="TxtDmobileno"
                       Grid.Row="2"
-                      materialDesign:HintAssist.Hint="Licence ID"
+                      materialDesign:HintAssist.Hint="Driver's Mobile Number"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
                       Margin="0,0,15,0"
                       IsReadOnly="True"
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                      Text="{Binding Vehicle.Driver.Mobileno}"/>
 
             <!--vehicle registration no-->
             <TextBox  x:Name="TxtVehiRegNo"
@@ -107,12 +108,13 @@
                       Width="290"
                       Margin="15,0,0,0"
                       IsReadOnly="True"
-                      Grid.Column="0"/>
+                      Grid.Column="0"
+                      Text="{Binding Vehicle.Vregno}"/>
 
             <!--date and time-->
             <TextBox x:Name="TxtDate"
                       Grid.Row="3"
-                      materialDesign:HintAssist.Hint="Date and Time"
+                      materialDesign:HintAssist.Hint="Pickup date"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
@@ -120,7 +122,7 @@
                       Margin="0,0,15,0"
                       IsReadOnly="True"
                       Grid.Column="1"
-                     Text="{Binding Pickupdate}"/>
+                      Text="{Binding Pickupdatestring, Mode=OneWay}"/>
 
             <!--location-->
             <TextBox  x:Name="TxtLocation"

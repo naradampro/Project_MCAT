@@ -24,8 +24,11 @@ namespace MCAT.UIs
         ReservationController cont = new ReservationController();
         public Reservations()
         {
-            InitializeComponent();
-            DataGridReservations.ItemsSource = cont.GetAll();
+            InitializeComponent();            
+            foreach (var record in cont.GetAll())
+            {
+                DataGridReservations.Items.Add(record);
+            }
         }
 
         private void OpenAddReservation(object sender, RoutedEventArgs e)

@@ -12,18 +12,19 @@
             <RowDefinition/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="DataGridVcat" Grid.Row="1" Margin="20,20,20,20"
-                  IsReadOnly="True" CanUserAddRows="False" ColumnHeaderHeight="40" HeadersVisibility="Column"
-                  ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <DataGrid x:Name="DataGridVcat" Grid.Row="1" Margin="20,20,20,70"
+                  IsReadOnly="True" CanUserAddRows="False"
+                  ColumnHeaderHeight="40" HeadersVisibility="Column"
+                  RowDetailsVisibilityMode="Visible"
+                  VerticalScrollBarVisibility="Auto">
             <!-- Column header Text and Data binding -->
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Category ID" Binding="{Binding Id}" Width="100"/>
-                <DataGridTextColumn Header="Category Name" Binding="{Binding Catname}" Width="150"/>
+                <DataGridTextColumn Header="Category ID" Binding="{Binding Id}" Width="150"/>
+                <DataGridTextColumn Header="Category Name" Binding="{Binding Catname}" Width="200"/>
                 <DataGridTextColumn Header="Maximum Passenger Capacity" Binding="{Binding Pcapacity}" Width="250"/>
                 <DataGridTextColumn Header="Number of available vehicles" Binding="{Binding Avaivehicles}" Width="250"/>
                 <DataGridTextColumn Header="Cost per 1km" Binding="{Binding Costonekm}" Width="150"/>
-                <DataGridTextColumn Header="Cost per day" Binding="{Binding Costoneday}" Width="150"/>
-                <DataGridTextColumn Header="Options" Width="*"/>
+                <DataGridTextColumn Header="Cost per day" Binding="{Binding Costoneday}" Width="*"/>                
             </DataGrid.Columns>
 
         </DataGrid>

@@ -48,21 +48,24 @@ namespace MCAT.Entities
 
         }
 
+        //Core Properties
         public int Id { get => id; set => id = value; }
-        public string CName { get => customer.Fname+" "+customer.Lname;}
-        public int CMobileno { get => this.customer.Mobileno; }
+        public int Cid { get => cid; set => cid = value; }
+        public int Vid { get => vid; set => vid = value; }
+        public int Did { get => did; set => did = value; }
         public string Vmodel { get => vehicle.Model; }
-        public string Catname { get => vehicle.Category.Catname; }
-        public string DName { get => vehicle.Driver.Fname + " " + Vehicle.Driver.Lname; }
-        public string Pickuploc { get => pickuploc; set => pickuploc = value; }
-        public DateTime Pickupdate { get => pickupdate.Date; set => pickupdate = value; }
-        public TimeSpan Pickuptime { get => pickuptime; set => pickuptime = value; }
+        public string Pickuploc { get => pickuploc; set => pickuploc = value; }        
         public int Days { get => days; set => days = value; }
         public double Distance { get => distance; set => distance = value; }
         public string Description { get => description; set => description = value; }
         public int Rstatus { get => rstatus; set => rstatus = value; }
-        internal Customer Customer { get => customer; set => customer = value; }
-        internal Vehicle Vehicle { get => vehicle; set => vehicle = value; }
+        public DateTime Pickupdate { get => pickupdate; set => pickupdate = value; }
+        public TimeSpan Pickuptime { get => pickuptime; set => pickuptime = value; }
+        public Customer Customer { get => customer; set => customer = value; }
+        public Vehicle Vehicle { get => vehicle; set => vehicle = value; }        
+
+        //Derived Properties
+        public string Pickupdatestring { get => pickupdate.ToString("MM/dd/yyyy"); }
     }
 
 }

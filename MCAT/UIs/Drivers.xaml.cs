@@ -25,8 +25,11 @@ namespace MCAT.UIs
         DriverController cont = new DriverController();
         public Drivers()
         {
-            InitializeComponent();
-            DataGridDrivers.ItemsSource = cont.GetAll();
+            InitializeComponent();            
+            foreach (var record in cont.GetAll())
+            {
+                DataGridDrivers.Items.Add(record);
+            }
         }
 
         private void OpenAddDriver(object sender, RoutedEventArgs e)

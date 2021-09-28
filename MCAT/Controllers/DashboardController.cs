@@ -43,7 +43,7 @@ namespace MCAT.Controllers
 
         public List<Reservation> TodayReservation()
         {
-            string sqlquery = "SELECT r.id, r.pickuploc, c.fname, c.lname, c.mobileno, v.model, cat.catname, d.fname, d.lname, d.mobileno FROM reservation r INNER JOIN customer c ON r.cid = c.id INNER JOIN vehicle v ON r.vid = v.id INNER JOIN vcategory cat ON v.catid = cat.id INNER JOIN driver d ON v.did = d.id Where DATE(pickupdate)=CURDATE()";
+            string sqlquery = "SELECT * FROM reservation r INNER JOIN customer c ON c.id = r.cid INNER JOIN vehicle v ON r.vid = v.id INNER JOIN vcategory cat ON v.catid = cat.id INNER JOIN driver d ON v.did = d.id Where DATE(pickupdate)=CURDATE()";
             return DBController.connect().Query<Reservation, Customer, Vehicle, VCategory, Driver, Reservation>(sqlquery,
                 (reserv, cust, vehic, vcat, driv) => {
                     reserv.Customer = cust;
@@ -51,7 +51,7 @@ namespace MCAT.Controllers
                     vehic.Category = vcat;
                     vehic.Driver = driv;
                     return reserv;
-                }, splitOn: "fname,model,catname,fname").ToList();
+                }, splitOn: "id,id,id,id").ToList();
         }
 
 

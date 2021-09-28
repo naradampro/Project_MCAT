@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MCAT.Controllers;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -20,9 +21,24 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class AddCategory : Page
     {
+        VCategoryController cont = new VCategoryController();
+        Entities.VCategory vcat = new Entities.VCategory();
         public AddCategory()
         {
             InitializeComponent();
+            FormGrid.DataContext = vcat;
+        }
+
+        private void SaveToDB(object sender, RoutedEventArgs e)
+        {
+            if (cont.Add(vcat))
+            {
+                MessageBox.Show("Done");
+            }
+            else
+            {
+                MessageBox.Show("Not saved");
+            }
         }
     }
 }

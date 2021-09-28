@@ -82,7 +82,23 @@
                     <TextBlock FontWeight="SemiBold" Foreground="#FF062044" FontSize="20" Margin="20">
                         TODAY RESERVATIONS
                     </TextBlock>
-                    <DataGrid x:Name="DataGirdTodayReservations" Height="288"/>
+                    <DataGrid x:Name="DataGirdTodayReservations" Height="288" IsReadOnly="True" CanUserAddRows="False"
+                              HeadersVisibility="Column"
+                              RowDetailsVisibilityMode="Visible"
+                              VerticalScrollBarVisibility="Auto">
+                        <!-- Column header Text and Data binding -->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Vehicle No" Binding="{Binding Vehicle.Vregno}"/>
+                            <DataGridTextColumn Header="Customer Name" Binding="{Binding Customer.Name}"/>
+                            <DataGridTextColumn Header="Customer Mobile" Binding="{Binding Customer.Mobileno}"/>
+                            <DataGridTextColumn Header="Pickup Time" Binding="{Binding Pickuptime}"/>
+                            <DataGridTextColumn Header="Pickup Location" Binding="{Binding Pickuploc}" Width="250"/>
+                            <DataGridTextColumn Header="Driver Name" Binding="{Binding Vehicle.Driver.Name}"/>
+                            <DataGridTextColumn Header="Driver Mobile" Binding="{Binding Vehicle.Driver.Mobileno}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
                 </StackPanel>
             </Grid>
 

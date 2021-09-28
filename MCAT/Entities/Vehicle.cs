@@ -66,6 +66,7 @@ namespace MCAT.Entities
             this.vstatus = vstatus;
         }
 
+        //Core Properties
         public int Id { get => id; set => id = value; }
         public int Catid { get => catid; set => catid = value; }
         public string Vregno { get => vregno; set => vregno = value; }
@@ -76,7 +77,7 @@ namespace MCAT.Entities
         public string Description { get => description; set => description = value; }
         public int Vstatus { get => vstatus; set => vstatus = value; }
         public string Model { get => model; set => model = value; }
-        internal VCategory Category { get => category; set => category = value; }
+        public VCategory Category { get => category; set => category = value; }
         public Driver Driver { get => driver; set => driver = value; }
     }
        
