@@ -22,14 +22,37 @@ namespace MCAT.UIs.ModalPopups
     public partial class ReserveVehicle : Page
     {
         VCategoryController cat = new VCategoryController();
+        VehicleController vcont = new VehicleController();
         public ReserveVehicle()
         {
             InitializeComponent();
             ComboVCategory.ItemsSource = cat.GetAll();
         }
 
-        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        private void btnFilter_Click_1(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                DateTime date = (DateTime)Pickerdate.SelectedDate;
+                ResultGrid.ItemsSource = vcont.GetAvaialableonDate(date);
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("Plese Select a date for reservation","Empty date",MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void OpenBookVehicle(object sender, RoutedEventArgs e)
+        {
+            Entities.Vehicle vehicle = (Entities.Vehicle)ResultGrid.SelectedItem;
+            if (vehicle == null)
+            {
+                _ = MessageBox.Show("Please select a vehicle record to book.", "No record selected.");
+            }
+            else
+            {
+                //((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.UpdateVehicle(vehicle);
+            }
 
         }
     }

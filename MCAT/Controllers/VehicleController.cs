@@ -69,6 +69,14 @@ namespace MCAT.Controllers
         }
 
 
+
+        public List<Vehicle> GetAvaialableonDate(DateTime date)
+        {
+            string sqlquery = "SELECT* FROM vehicle WHERE id NOT IN(SELECT vid from reservation WHERE pickupdate = '" + date.ToString("yyyy-MM-dd") + "')";
+            return DBController.connect().Query<Vehicle>(sqlquery).ToList();
+        }
+
+
         /// <summary>
         /// Updates a given column
         /// </summary>
