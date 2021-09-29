@@ -12,22 +12,22 @@
     <Grid>
 
         <Grid Margin="79,44,95,116">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="95*"/>
-                    <!--Title-->
-                    <RowDefinition Height="281*"/>
-                    <!--Data Grid-->
-                    <RowDefinition Height="114*"/>
-                    <!--Button-->
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="317*"/>
-                    <ColumnDefinition Width="665*"/>
-                </Grid.ColumnDefinitions>
-
+            <Grid.RowDefinitions>
+                <RowDefinition Height="95*"/>
                 <!--Title-->
-                <TextBlock Text="Customer Details"
+                <RowDefinition Height="281*"/>
+                <!--Data Grid-->
+                <RowDefinition Height="114*"/>
+                <!--Button-->
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="317*"/>
+                <ColumnDefinition Width="665*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Title-->
+            <TextBlock Text="Customer Details"
                        FontSize="25"
                        FontWeight="Medium"
                        Foreground="#FF062044" 
@@ -37,12 +37,12 @@
                        Width="216" 
                        Grid.ColumnSpan="2"/>
 
-                <!--Data Grid-->
-                <DataGrid Grid.ColumnSpan="2"   
-                      Grid.Row="1"/>
+            <!--Data Grid-->
+            <DataGrid Grid.ColumnSpan="2"   
+                      Grid.Row="1" x:Name="CustomerDataGrid" Margin="0,0,0,170"/>
 
-                <!--Button-->
-                <Button x:Name="btnNext"
+            <!--Button-->
+            <Button x:Name="btnNext"
                     Style="{StaticResource MaterialDesignFlatLightBgButton}"
                     Content="Next"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
@@ -50,6 +50,16 @@
                     Grid.Column="1" 
                     Margin="629,46,0,36"
                     Width="100"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="236,161,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="45" RenderTransformOrigin="0.5,0.5" Width="550" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
 
         </Grid>
 

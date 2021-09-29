@@ -39,7 +39,7 @@
                     Content="Search"                   
                     Width="150"
                     Grid.Column="1"
-                    HorizontalAlignment="Left" Margin="20" Click="btnFilter_Click_1"/>
+                    HorizontalAlignment="Left" Margin="20" Click="SearchVehicles"/>
 
 
             <!--Vehicle Category Filter-->
@@ -59,7 +59,10 @@
             </StackPanel>
             
             <!--Data Grid-->
-            <DataGrid x:Name="ResultGrid" Grid.ColumnSpan="3" Grid.Row="1"/>
+            <DataGrid x:Name="ResultGrid" Grid.ColumnSpan="3" Grid.Row="1" IsReadOnly="True" CanUserAddRows="False"
+                  ColumnHeaderHeight="40" HeadersVisibility="Column"
+                  RowDetailsVisibilityMode="Visible"
+                  VerticalScrollBarVisibility="Auto"/>
 
             <!--Button Next-->
             <Button x:Name="btnNext"

@@ -29,7 +29,7 @@ namespace MCAT.UIs.ModalPopups
             ComboVCategory.ItemsSource = cat.GetAll();
         }
 
-        private void btnFilter_Click_1(object sender, RoutedEventArgs e)
+        private void SearchVehicles(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace MCAT.UIs.ModalPopups
             }
             else
             {
-                //((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ModalPopups.UpdateVehicle(vehicle);
+                ((MainWindow)Application.Current.MainWindow).PageView.Content = new SearchCustomer(vehicle);
             }
 
         }

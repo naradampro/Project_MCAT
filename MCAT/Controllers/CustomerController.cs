@@ -50,6 +50,12 @@ namespace MCAT.Controllers
         }
 
 
+        public Customer GetByMobile(int mobile)
+        {
+            string sqlquery = "SELECT * FROM customer c WHERE c.mobileno="+mobile;
+            return DBController.connect().Query<Customer>(sqlquery).FirstOrDefault();
+        }
+
         /// <summary>
         /// To fetch customer object from DB with id
         /// </summary>

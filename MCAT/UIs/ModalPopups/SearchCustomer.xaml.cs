@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MCAT.Controllers;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -20,9 +10,43 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class SearchCustomer : Page
     {
-        public SearchCustomer()
+        CustomerController cont = new CustomerController();
+        public SearchCustomer(Entities.Vehicle vehicle)
         {
             InitializeComponent();
+        }
+
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {            
+            try
+            {
+                int mobile = Int32.Parse(TxtSearch.Text);
+                Entities.Customer customer = cont.GetByMobile(mobile);
+                if (customer==null)
+                {
+                    FormGrid.Visibility = Visibility.Hidden;
+                    Notfound.Visibility = Visibility.Visible;
+                    Entermsg.Visibility = Visibility.Hidden;
+                    btnNext.IsEnabled = false;
+                }
+                else
+                {
+                    FormGrid.Visibility = Visibility.Visible;
+                    Notfound.Visibility = Visibility.Hidden;
+                    Entermsg.Visibility = Visibility.Hidden;
+                    FormGrid.DataContext = customer;
+                    btnNext.IsEnabled = true;
+                }
+            }
+            catch (Exception ex) when (ex is OverflowException || ex is FormatException)
+            {
+                MessageBox.Show("Please enter a mobile number.", "Empty Mobile number");
+            }
+        }
+
+        private void AddCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new AddCustomer();
         }
     }
 }

@@ -9,58 +9,150 @@
       Height="650" Width="1250"
       Title="SearchCustomer">
 
-    <Grid>
+    <Grid Background="White">
 
-        <Grid Margin="48,30,48,30">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="77*"/>
-                <!--Search Box-->
-                <RowDefinition Height="411*"/>
-                <!--Data Grid-->
-                <RowDefinition Height="81*"/>
-                <!--Button Next-->
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="338*"/>
-                <ColumnDefinition Width="351*"/>
-                <ColumnDefinition Width="465*"/>
-            </Grid.ColumnDefinitions>
 
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
             <!--Search Box-->
-            <TextBox x:Name="TxtSearch"
-                     Style="{StaticResource MaterialDesignFilledTextBox}"
+            <TextBox x:Name="TxtSearch" 
+                     MaxLength="10"
                      AcceptsReturn="True"
                      TextWrapping="Wrap"
-                     MaxWidth="420"
-                     materialDesign:HintAssist.Hint="Mobile Number"
-                     FontSize="14"
-                     IsEnabled="{Binding IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" 
-                     Margin="2,17,10,16"/>
+                     materialDesign:HintAssist.Hint="Enter Mobile Number"       
+                     FontSize="14" Width="400" Height="30"/>
 
             <!--Filter Button-->
             <Button x:Name="btnFilter"
+                    Margin="20,0,0,0"
                     Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                    Content="Filter"
+                    Content="Search Customer"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
                     Width="150"
-                    Grid.Column="1"
-                    HorizontalAlignment="Left" 
-                    Margin="12,31,0,17"/>
+                    HorizontalAlignment="Left"                    
+                    Height="32" Click="btnFilter_Click"
+                    />
+        </StackPanel>
 
-            <!--Data Grid-->
-            <DataGrid Grid.ColumnSpan="3" 
-                      Grid.Row="1"/>
-
-            <!--Button Next-->
-            <Button x:Name="btnNext"
+        <!--Button Next-->
+        <Button x:Name="btnNext"
                     Style="{StaticResource MaterialDesignFlatLightBgButton}"
                     Content="Next"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
-                    Grid.Row="2" 
-                    Grid.Column="2"
+                    IsEnabled="False"
+                    Grid.Row="2"
                     Width="100"
-                    Margin="363,26,2,26"/>
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Center"
+                    Margin="0,0,60,50"/>
+
+        <StackPanel x:Name="Notfound" Orientation="Vertical" Grid.Row="1" Margin="0,80" Visibility="Hidden">
+            <Label Content="Customer you are looking for is not registered."
+               FontSize="20"
+               HorizontalAlignment="Center"
+               Foreground="#D62828"
+               FontWeight="Bold"/>
+
+            <Button x:Name="AddCustomer"
+                    Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                    Content="Register a new customer"
+                    HorizontalAlignment="Center"
+                    Margin="0,50"
+                    Click="AddCustomer_Click"/>
+        </StackPanel>
+
+        <StackPanel x:Name="Entermsg" Orientation="Vertical" Grid.Row="1" Margin="0,100" Visibility="Visible">
+            <Label Content="To check for registerd customer"
+               FontSize="20"
+               HorizontalAlignment="Center"
+               Foreground="#14213D"/>
+
+            <Label Content="Enter the Customer's mobile number and search."
+               FontSize="20"
+               HorizontalAlignment="Center"
+               Foreground="#14213D"
+               FontWeight="Bold"/>
+        </StackPanel>
+
+
+
+        <Grid x:Name="FormGrid" Grid.Row="1" Visibility="Hidden">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <!--First Name-->
+                <RowDefinition Height="1*"/>
+                <!--NIC-->
+                <RowDefinition Height="1*"/>
+                <!--Mobile Number-->
+                <RowDefinition Height="1*"/>
+                <!--Address-->
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <!--Customer ID-->
+            <TextBox  Grid.Row="1"
+                materialDesign:HintAssist.Hint="Customer ID"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center"                
+                FontSize="15" 
+                Width="600"
+                IsReadOnly="True"
+                Text="{Binding Id}"/>
+
+            <!--First Name-->
+            <TextBox  x:Name="TxtFirstName"
+                Grid.Row="0"
+                materialDesign:HintAssist.Hint="Name"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center"
+                FontSize="15" 
+                Width="600"
+                IsReadOnly="True"
+                Text="{Binding Name,Mode=OneWay}"/>
+
+            <!--NIC-->
+            <TextBox  x:Name="TxtNIC"
+                Grid.Row="2"
+                materialDesign:HintAssist.Hint="NIC"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center"
+                FontSize="15" 
+                Width="600"
+                IsReadOnly="True"
+                Text="{Binding Nic}"/>
+
+
+            <!--Mobile Number-->
+            <TextBox x:Name="TxtMobile"
+                Width="600"
+                materialDesign:HintAssist.Hint="Mobile Number"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center"
+                FontSize="15"
+                Grid.Row="3"
+                materialDesign:TransitionAssist.DisableTransitions="True"
+                IsReadOnly="True"
+                Text="{Binding Mobileno}"/>
+
+
+
+            <!--Address-->
+            <TextBox  x:Name="TxtAddress"
+                Grid.Row="4"
+                materialDesign:HintAssist.Hint="Address"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                VerticalAlignment="Center"
+                FontSize="15" 
+                Width="600"
+                IsReadOnly="True"
+                Text="{Binding Address}"/>
+
 
         </Grid>
 
