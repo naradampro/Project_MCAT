@@ -109,14 +109,14 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Background="#fcbf49" Grid.Column="0" Margin="0,10,10,60">
+                <StackPanel Background="#FDCF72" Grid.Column="0" Margin="0,10,10,60">
                     <Label x:Name="LblDriverCount" HorizontalAlignment="Center" FontSize="50"/>
                     <materialDesign:PackIcon Kind="AccountGroup" HorizontalAlignment="Center" Width="50" Height="50">
                     </materialDesign:PackIcon>
                     <TextBlock Text="Registered Drivers" TextWrapping="Wrap" FontSize="18" Width="154" Height="23" FontWeight="Medium" Margin="-2,4"/>
                 </StackPanel>
 
-                <StackPanel Background="#fcbf49" Grid.Column="1" Margin="0,10,10,60">
+                <StackPanel Background="#FDCF72" Grid.Column="1" Margin="0,10,10,60">
                     <Label x:Name="LblVehicleCount" HorizontalAlignment="Center" FontSize="50"/>
                     <materialDesign:PackIcon Kind="CarMultiple"  Width="50" Height="50" HorizontalAlignment="Center"/>
                     <TextBlock Text="Available Vehicles" TextWrapping="Wrap" FontSize="18" Width="165" Height="23" FontWeight="Medium" Margin="-2"/>

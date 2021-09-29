@@ -65,7 +65,7 @@ namespace MCAT.Entities
         public Vehicle Vehicle { get => vehicle; set => vehicle = value; }        
 
         //Derived Properties
-        public string Pickupdatestring { get => pickupdate.ToString("MM/dd/yyyy"); }
+        public string Pickupdatestring { get => pickupdate.ToString("yyyy-dd-MM"); }
     }
 
 }

@@ -28,7 +28,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Search Box-->
-            <DatePicker x:Name="TxtSearch"
+            <DatePicker x:Name="Pickerdate"
                      Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                      materialDesign:HintAssist.Hint="Select the reservation date."
                      FontSize="15" Margin="0"/>
@@ -39,7 +39,7 @@
                     Content="Search"                   
                     Width="150"
                     Grid.Column="1"
-                    HorizontalAlignment="Left" Margin="20"/>
+                    HorizontalAlignment="Left" Margin="20" Click="btnFilter_Click_1"/>
 
 
             <!--Vehicle Category Filter-->
@@ -59,7 +59,7 @@
             </StackPanel>
             
             <!--Data Grid-->
-            <DataGrid Grid.ColumnSpan="3" Grid.Row="1"/>
+            <DataGrid x:Name="ResultGrid" Grid.ColumnSpan="3" Grid.Row="1"/>
 
             <!--Button Next-->
             <Button x:Name="btnNext"
@@ -68,7 +68,8 @@
                     Grid.Row="2" 
                     Grid.Column="2"
                     HorizontalAlignment="Right"
-                    IsEnabled="False"/>
+                    IsEnabled="True"
+                    Click="OpenBookVehicle"/>
             
         </Grid>
 
