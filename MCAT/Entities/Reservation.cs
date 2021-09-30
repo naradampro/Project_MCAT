@@ -65,7 +65,15 @@ namespace MCAT.Entities
         public Vehicle Vehicle { get => vehicle; set => vehicle = value; }        
 
         //Derived Properties
-        public string Pickupdatestring { get => pickupdate.ToString("yyyy-dd-MM"); }
+        public string Pickupdatestring { get => pickupdate.ToString("yyyy-MM-dd"); }
+
+        public double Amount
+        {
+            get
+            {
+                return Distance * Vehicle.Category.Costonekm + Days * Vehicle.Category.Costoneday;
+            }
+        }
     }
 
 }

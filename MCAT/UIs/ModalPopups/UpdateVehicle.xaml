@@ -9,7 +9,7 @@
       Height="550" Width="750"
       Title="UpdateVehicle">
 
-    <Grid>
+    <Grid Background="white">
 
         <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
@@ -21,6 +21,7 @@
                 <RowDefinition Height="20*"/>
                 <RowDefinition Height="20*"/>
                 <RowDefinition Height="20*"/>
+
                 <RowDefinition Height="30*"/>
             </Grid.RowDefinitions>
 
@@ -30,7 +31,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Title-->
-            <TextBlock Text="Update Vehicle Details"
+            <TextBlock Text="Add Vehicle Details"
                                    FontSize="20"
                                    FontWeight="Medium"
                                    Foreground="#FF062044" 
@@ -41,34 +42,32 @@
                                    Grid.ColumnSpan="2"/>
 
             <!--category-->
-            <StackPanel  x:Name="ComboCategory"
-                         Grid.Row="1"
+            <StackPanel  Grid.Row="1"
                          Grid.Column="0"
                          VerticalAlignment="Center" 
                          Width="290"
-                         Margin="15,15,0,0"
-                         >
+                         Margin="0">
 
-                <ComboBox Foreground="Gray"
-                                      FontSize="15"
-                                      materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}">
-                    <ComboBoxItem IsSelected="True"
-                                  Content="Category"  />
-                    <ComboBoxItem   
-                                  Content="Non-AC" />
+                <ComboBox x:Name="ComboCategory" Foreground="Gray"
+                          FontSize="15"
+                          materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}"
+                          DisplayMemberPath="Catname"
+                          SelectedValuePath="Id"
+                          materialDesign:HintAssist.Hint="Vehicle category">
                 </ComboBox>
             </StackPanel>
 
             <!--model-->
             <TextBox  x:Name="TxtModel"
-                      Grid.Row="1"
+                      Grid.Row="2"
                       materialDesign:HintAssist.Hint="Model"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="0,0,15,0"
-                      Grid.Column="1"/>
+                      Margin="0"
+                      Grid.Column="1"
+                      Text="{Binding Model,Mode=TwoWay}"/>
 
             <!--registration no-->
             <TextBox  x:Name="TxtVehicleRegNo"
@@ -78,19 +77,25 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="15,0,0,0" 
-                      Grid.Column="0"/>
+                      Margin="0" 
+                      Grid.Column="0"
+                      Text="{Binding Vregno,Mode=TwoWay}"/>
 
-            <!--passenger capacity-->
-            <TextBox  x:Name="TxtPassengerCapacity"
-                      Grid.Row="2"
-                      materialDesign:HintAssist.Hint="Passenger Capacity"
-                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                      VerticalAlignment="Center" 
-                      FontSize="15" 
-                      Width="290"
-                      Margin="0,0,15,0"
-                      Grid.Column="1"/>
+            <!--Driver-->
+            <StackPanel  Grid.Row="1"
+                         Grid.Column="1"
+                         VerticalAlignment="Center" 
+                         Width="290"
+                         Margin="0">
+
+                <ComboBox x:Name="ComboDriver" Foreground="Gray"
+                          FontSize="15"
+                          materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Id"
+                          materialDesign:HintAssist.Hint="Select Driver from Here">
+                </ComboBox>
+            </StackPanel>
 
             <!--fuel type-->
             <TextBox  x:Name="TxtFuelType"
@@ -100,47 +105,50 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="15,0,0,0" 
-                      Grid.Column ="0"/>
+                      Margin="0"
+                      Grid.Column ="0"
+                      Text="{Binding FuelType,Mode=TwoWay}"/>
 
             <!--AC status-->
-            <StackPanel  x:Name="ComboACStatus"
-                         Grid.Row="3"
+            <StackPanel  Grid.Row="3"
                          Grid.Column="1"
                          VerticalAlignment="Center" 
                          Width="290"
-                         Margin="0,19,15,0" >
+                         Margin="0">
 
                 <ComboBox Foreground="Gray"
-                                      FontSize="15"
-                                      materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}">
-                    <ComboBoxItem IsSelected="True"
-                                  Content="AC"  />
-                    <ComboBoxItem   
-                                  Content="Non-AC" />
+                          x:Name="ComboAc"
+                          FontSize="15"
+                          materialDesign:HintAssist.Hint="AC/Non-AC"
+                          SelectedValuePath="Content"
+                          materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}">
+                    <ComboBoxItem Content="AC" />
+                    <ComboBoxItem Content="Non-AC" />
                 </ComboBox>
             </StackPanel>
 
 
             <!--last service date-->
-            <DatePicker x:Name="TxtLSDate"
+            <DatePicker x:Name="DateLsDate"                        
                         Grid.Row="4"
                         Width="290"
                         FontSize="15"
                         materialDesign:HintAssist.Hint="Last Service Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.Column ="0"
-                        Margin="15,0,0,0"/>
+                        Margin="0"
+                        Text="{Binding Lsdate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
             <!--next service date-->
-            <DatePicker x:Name="TxtNSDate"
+            <DatePicker x:Name="DateNsDate"
                         Grid.Row="4"
                         Width="290"
                         FontSize="15"
                         materialDesign:HintAssist.Hint="Next Service Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
-                        Grid.Column="2"
-                        Margin="0,0,15,0"/>
+                        Grid.Column="1"
+                        Margin="0"
+                        Text="{Binding Nsdate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
             <!--description-->
             <TextBox  x:Name="TxtDescription"
@@ -149,8 +157,10 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
-                      Width="600"  
-                      Grid.ColumnSpan="2"/>
+                      Width="615"  
+                      Grid.ColumnSpan="2"
+                      Margin="0"
+                      Text="{Binding Description,Mode=TwoWay}"/>
 
             <!--save changes button-->
             <Button x:Name="btnSaveChanges"
@@ -161,7 +171,7 @@
                     Grid.Row="6"
                     Grid.ColumnSpan="1"
                     Margin="104,0,19,0"
-                    VerticalAlignment="Center"/>
+                    VerticalAlignment="Center" Click="btnSaveChanges_Click"/>
 
             <!--deactivate button-->
             <Button x:Name="btnDeactivate"

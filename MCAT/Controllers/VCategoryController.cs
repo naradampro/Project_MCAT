@@ -66,12 +66,11 @@ namespace MCAT.Controllers
         /// Updates a given column
         /// </summary>
         /// <param name="category"></param>
-        /// <param name="ColumnName"></param>
         /// <returns></returns>
-        public bool Update(VCategory category, string ColumnName)
+        public bool Update(VCategory category)
         {
-            string sqlquery = "UPDATE "+table+ " SET " + ColumnName + "=@" + ColumnName + " Where Id=@Id";
-            var count = DBController.connect().Execute(sqlquery, category);
+            string sqlquery = @"UPDATE vcategory SET Catname = @Catname, Pcapacity = @Pcapacity, Costonekm = @Costonekm, Avaivehicles = @Avaivehicles, Costoneday = @Costoneday WHERE Id = @Id";
+            var count = DBController.connect().Execute(sqlquery,category);
             return count > 0;
         }
 

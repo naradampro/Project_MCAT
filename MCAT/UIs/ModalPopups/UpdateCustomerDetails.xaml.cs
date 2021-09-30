@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MCAT.Controllers;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -20,10 +9,26 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class UpdateCustomerDetails : Page
     {
+        CustomerController cont = new CustomerController();
+        Entities.Customer customer = new Entities.Customer();
         public UpdateCustomerDetails(Entities.Customer customer)
         {
             InitializeComponent();
+            this.customer = customer;
             FormGrid.DataContext = customer;
+        }
+
+        private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            if (cont.Update(this.customer))
+            {
+                MessageBox.Show("The Customer Details Successfully Updated.");
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ViewCustomerDetails(this.customer);
+            }
+            else
+            {
+                MessageBox.Show("An Error Occured.");
+            }
         }
     }
 }

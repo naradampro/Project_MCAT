@@ -25,7 +25,7 @@
                 <DataGridTextColumn Header="Customer Name" Binding="{Binding Customer.Name}"/>
                 <DataGridTextColumn Header="Customer Mobile" Binding="{Binding Customer.Mobileno}"/>
                 <DataGridTextColumn Header="Pickup Date" Binding="{Binding Pickupdatestring}"/>
-                <DataGridTextColumn Header="Pickup Time" Binding="{Binding Pickuptime}"/>                
+                <DataGridTextColumn Header="Pickup Time" Binding="{Binding Pickuptime}"/>
                 <DataGridTextColumn Header="Pickup Location" Binding="{Binding Pickuploc}" Width="250"/>
                 <DataGridTextColumn Header="Driver Name" Binding="{Binding Vehicle.Driver.Name}"/>
                 <DataGridTextColumn Header="Driver Mobile" Binding="{Binding Vehicle.Driver.Mobileno}"/>
@@ -50,6 +50,15 @@
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Update" Height="20"/>
                 <TextBlock Margin="10,0">Update Selected</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            x:Name="Refresh"
+            Margin="20,50,1110,48"
+            Click="Refresh_Click">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Height="20"/>
+                <TextBlock Margin="10,0" Text="Refresh"/>
             </StackPanel>
         </Button>
 

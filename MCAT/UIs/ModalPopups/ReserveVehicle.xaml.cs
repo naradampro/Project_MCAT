@@ -26,6 +26,8 @@ namespace MCAT.UIs.ModalPopups
         public ReserveVehicle()
         {
             InitializeComponent();
+            ResultGrid.Visibility = Visibility.Hidden;
+            btnNext.Visibility = Visibility.Hidden;
             ComboVCategory.ItemsSource = cat.GetAll();
         }
 
@@ -34,6 +36,9 @@ namespace MCAT.UIs.ModalPopups
             try
             {
                 DateTime date = (DateTime)Pickerdate.SelectedDate;
+                entermsg.Visibility = Visibility.Hidden;
+                ResultGrid.Visibility = Visibility.Visible;
+                btnNext.Visibility = Visibility.Visible;
                 ResultGrid.ItemsSource = vcont.GetAvaialableonDate(date);
             }
             catch (InvalidOperationException)

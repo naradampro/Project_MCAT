@@ -57,8 +57,9 @@ namespace MCAT.UIs
 
         private void OpenPayments(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).PageView.Content = new Payments();
-            ((MainWindow)Application.Current.MainWindow).NavDashboard.IsChecked = false;
+            MessageBox.Show("View Payments is not available right now.", "Sorry", MessageBoxButton.OK, MessageBoxImage.Error);
+            //((MainWindow)Application.Current.MainWindow).PageView.Content = new Payments();
+            //((MainWindow)Application.Current.MainWindow).NavDashboard.IsChecked = false;
         }
     }
 }

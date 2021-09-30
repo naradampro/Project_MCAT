@@ -66,8 +66,16 @@ namespace MCAT.Controllers
         /// <returns>A Reservation with given id</returns>
         public Reservation GetById(int id)
         {
-            string sqlquery = "Select * From " + table + " Where Id=@Id";
-            return DBController.connect().Query<Reservation>(sqlquery, new { Id = id }).FirstOrDefault();
+            string sqlquery = @"SELECT * FROM reservation r INNER JOIN customer c ON c.id = r.cid INNER JOIN vehicle v ON r.vid = v.id INNER JOIN vcategory cat ON v.catid = cat.id INNER JOIN driver d ON v.did = d.id Where r.id="+id;
+            return DBController.connect().Query<Reservation, Customer, Vehicle, VCategory, Driver, Reservation>(sqlquery,
+                (reserv, cust, vehic, vcat, driv) =>
+                {
+                    reserv.Customer = cust;
+                    reserv.Vehicle = vehic;
+                    vehic.Category = vcat;
+                    vehic.Driver = driv;
+                    return reserv;
+                }, splitOn: "id,id,id,id").FirstOrDefault();
         }
 
 
@@ -75,11 +83,10 @@ namespace MCAT.Controllers
         /// Updates a given column
         /// </summary>
         /// <param name="reservation"></param>
-        /// <param name="ColumnName"></param>
         /// <returns></returns>
-        public bool Update(Reservation reservation, string ColumnName)
+        public bool Update(Reservation reservation)
         {
-            string sqlquery = "UPDATE " + table + " SET " + ColumnName + "=@" + ColumnName + " Where Id=@Id";
+            string sqlquery = @"UPDATE reservation SET Pickuploc = @Pickuploc, Pickupdate = @Pickupdate, Pickuptime = @Pickuptime, Days = @Days, Distance = @Distance, Description = @Description WHERE Id = @Id";
             var count = DBController.connect().Execute(sqlquery, reservation);
             return count > 0;
         }

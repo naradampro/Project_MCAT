@@ -10,7 +10,7 @@
       Title="AddForm" Background="White"
       >
 
-    <Grid>
+    <Grid x:Name="FormGrid">
         <!--Grid 1 for Reservation-->
         <Grid Margin="48,30,530,100">
             <Grid.RowDefinitions>
@@ -44,7 +44,8 @@
                      TextWrapping="Wrap"
                      MaxWidth="420"
                      materialDesign:HintAssist.Hint="Enter Reservation ID"
-                     FontSize="15" Margin="0,5,0,18"/>
+                     FontSize="15" Margin="0,5,0,18"
+                     />
 
             <!--Filter Button-->
             <Button x:Name="btnFilter"
@@ -52,7 +53,8 @@
                     Content="Search"                    
                     Width="150"
                     Grid.Column="1"
-                    HorizontalAlignment="Left" Margin="0,10,0,41"/>
+                    HorizontalAlignment="Left" Margin="0,10,0,41" Click="btnFilter_Click"
+                    />
 
 
             <!--Title-->
@@ -71,7 +73,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center"
                       FontSize="15"
-                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"/>
+                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"
+                      Text="{Binding Customer.Name, Mode=OneWay}"/>
 
 
             <!--Vehicle Reg No-->
@@ -81,7 +84,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15"
-                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"/>
+                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"
+                      Text="{Binding Vehicle.Vregno, Mode=OneWay}"/>
 
 
             <!--Location-->
@@ -91,7 +95,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15"
-                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"/>
+                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"
+                      Text="{Binding Pickuploc, Mode=OneWay}"/>
 
 
             <!--Total Distance-->
@@ -101,7 +106,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15"
-                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"/>
+                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"
+                      Text="{Binding Distance, Mode=OneWay}"/>
 
 
             <!--Date and Time-->
@@ -111,7 +117,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15"
-                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"/>
+                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"
+                      Text="{Binding Pickupdatestring, Mode=OneWay}"/>
 
             <!--Number of Days-->
             <TextBox  x:Name="TxtNoDays"
@@ -120,7 +127,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15"
-                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"/>
+                      Grid.ColumnSpan="2" Height="43" Margin="36,0,36,0"
+                      Text="{Binding Days, Mode=OneWay}"/>
 
         </Grid>
 
@@ -149,7 +157,8 @@
                        FontWeight="Medium"
                        Foreground="#FF062044"
                        VerticalAlignment="Center" 
-                       HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                       />
 
 
             <RadioButton x:Name="RbtnFPayment"
@@ -171,15 +180,17 @@
                          Grid.Row="2"
                          Width="250"
                          VerticalAlignment="Center" 
-                         HorizontalAlignment="Center"/>
+                         HorizontalAlignment="Center"
+                         IsEnabled="False"/>
 
 
             <TextBox  x:Name="TxtAmount"
                       Grid.Row="3"
                       materialDesign:HintAssist.Hint="Amount"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                      VerticalAlignment="Top" 
-                      FontSize="15" Margin="36,12,36,0"/>
+                      VerticalAlignment="Top"
+                      FontSize="30" Margin="36,12,36,0"
+                      Text="{Binding Amount, Mode=OneWay}"/>
 
 
             <Button x:Name="btnPaid"
@@ -187,7 +198,7 @@
                     Content="Mark as Paid"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
                     Grid.Row="4"
-                    Width="150"/>
+                    Width="150" Click="btnPaid_Click"/>
 
         </Grid>
 

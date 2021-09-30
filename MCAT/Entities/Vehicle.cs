@@ -57,6 +57,22 @@ namespace MCAT.Entities
         public Driver Driver { get => driver; set => driver = value; }
         public DateTime Lsdate { get => lsdate; set => lsdate = value; }
         public DateTime Nsdate { get => nsdate; set => nsdate = value; }
+
+        public VCategory VCategory
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Driver Driver1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
        
 }

@@ -24,7 +24,7 @@
                 <DataGridTextColumn Header="Maximum Passenger Capacity" Binding="{Binding Pcapacity}" Width="250"/>
                 <DataGridTextColumn Header="Number of available vehicles" Binding="{Binding Avaivehicles}" Width="250"/>
                 <DataGridTextColumn Header="Cost per 1km" Binding="{Binding Costonekm}" Width="150"/>
-                <DataGridTextColumn Header="Cost per day" Binding="{Binding Costoneday}" Width="*"/>                
+                <DataGridTextColumn Header="Cost per day" Binding="{Binding Costoneday}" Width="*"/>
             </DataGrid.Columns>
 
         </DataGrid>
@@ -56,6 +56,15 @@
             <StackPanel Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Update" Height="20"/>
                 <TextBlock Margin="10,0">Update Selected</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            x:Name="Refresh"
+            Margin="20,50,1110,48"
+            Click="Refresh_Click">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Height="20"/>
+                <TextBlock Margin="10,0" Text="Refresh"/>
             </StackPanel>
         </Button>
 

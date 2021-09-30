@@ -57,7 +57,7 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      Text="{Binding Catname, Mode=OneTime}"/>
+                      Text="{Binding Catname, Mode=TwoWay}"/>
 
 
             <!--Passenger Capacity-->
@@ -69,7 +69,7 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      Text="{Binding Pcapacity, Mode=OneTime}"/>
+                      Text="{Binding Pcapacity, Mode=TwoWay}"/>
 
 
             <!--No. Vehicles-->
@@ -81,7 +81,7 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      Text="{Binding Avaivehicles, Mode=OneTime}"/>
+                      Text="{Binding Avaivehicles, Mode=TwoWay}"/>
 
 
             <!--Cost per 1km-->
@@ -93,7 +93,7 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      Text="{Binding Costonekm, Mode=OneTime}"/>
+                      Text="{Binding Costonekm, Mode=TwoWay}"/>
 
 
             <!--Cost per day-->
@@ -105,7 +105,7 @@
                       Grid.ColumnSpan="2"
                       FontSize="15" 
                       Width="600"
-                      Text="{Binding Costoneday, Mode=OneTime}"/>
+                      Text="{Binding Costoneday, Mode=TwoWay}"/>
 
 
             <!--Save Changes Button-->
@@ -117,7 +117,7 @@
                     VerticalAlignment="Center"
                     Margin="104,0,19,0"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
-                    Grid.Row="6"/>
+                    Grid.Row="6" Click="btnSaveChanges_Click"/>
 
             <!--Deactivate Button-->
             <Button x:Name="btnDeactivate"

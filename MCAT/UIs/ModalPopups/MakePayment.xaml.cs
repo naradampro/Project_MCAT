@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MCAT.Controllers;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -20,6 +10,7 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class MakePayment : Page
     {
+        ReservationController cont = new ReservationController();
         public MakePayment()
         {
             InitializeComponent();
@@ -28,6 +19,17 @@ namespace MCAT.UIs.ModalPopups
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {
+            int resid = Int32.Parse(TxtSearch.Text);
+            FormGrid.DataContext = cont.GetById(resid);
+        }
+
+        private void btnPaid_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Payment is not not successful. Try again.", "Sorry", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

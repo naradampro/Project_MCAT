@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Title-->
-            <TextBlock Text="Update Reservation details"
+            <TextBlock Text="Create New Reservation"
                                    FontSize="20"
                                    FontWeight="Medium"
                                    Foreground="#FF062044" 
@@ -48,8 +48,8 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600" 
-                      IsReadOnly="True"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Pickuploc, Mode=TwoWay}"/>
 
             <!--pick date-->
             <DatePicker x:Name="TxtDate"
@@ -59,17 +59,21 @@
                         materialDesign:HintAssist.Hint="Pick Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.ColumnSpan="1"
-                        Margin="15,0,0,0"/>
+                        Margin="15,0,0,0"
+                        IsEnabled="False"
+                        Text="{Binding Pickupdate, Mode=TwoWay}"/>
 
             <!--pick time-->
             <materialDesign:TimePicker x:Name="TxtTime"
                                        Width="290" 
                                        FontSize="15"
                                        Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                                       Is24Hours="True" SelectedTimeFormat="Long"
                                        materialDesign:HintAssist.Hint="Pick Time" 
                                        Grid.Row="2"
                                        Grid.Column="2"
-                                       Margin="0,0,15,0"/>
+                                       Margin="0,0,15,0"
+                                       Text="{Binding Pickuptime, Mode=TwoWay}"/>
 
             <!--total distance-->
             <TextBox  x:Name="TxtTotalDis"
@@ -79,7 +83,8 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Distance, Mode=TwoWay}"/>
 
             <!--number of days-->
             <TextBox  x:Name="TxtNoDays"
@@ -89,17 +94,19 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Days, Mode=TwoWay}"/>
 
-            <!--discription-->
-            <TextBox  x:Name="TxtDiscription"
+            <!--description-->
+            <TextBox  x:Name="TxtDescription"
                       Grid.Row="5"
                       materialDesign:HintAssist.Hint="Description"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Description, Mode=TwoWay}"/>
 
             <!--save changes button-->
             <Button x:Name="btnSaveChanges"
@@ -110,7 +117,8 @@
                     Grid.Row="6"
                     Grid.ColumnSpan="1"
                     Margin="104,0,19,0"
-                    VerticalAlignment="Center"/>
+                    VerticalAlignment="Center"
+                    Click="btnSaveChanges_Click"/>
 
             <!--deactivate button-->
             <Button x:Name="bntDeactivation"

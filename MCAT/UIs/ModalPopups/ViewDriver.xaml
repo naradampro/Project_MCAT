@@ -9,7 +9,7 @@
       Height="550" Width="750"
       Title="ViewDriver">
 
-    <Grid>
+    <Grid Background="white">
 
         <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
@@ -48,7 +48,7 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="15,0,0,0"
+                      Margin="0"
                       Grid.ColumnSpan="1"
                       IsReadOnly="True"
                       Text="{Binding Fname}"/>
@@ -61,7 +61,7 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="0,0,15,0"
+                      Margin="0"
                       Grid.Column="2"
                       IsReadOnly="True"
                       Text="{Binding Lname}"/>
@@ -74,23 +74,10 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="15,0,0,0" 
+                      Margin="0" 
                       Grid.ColumnSpan="1"
                       IsReadOnly="True"
                       Text="{Binding Lid}"/>
-
-            <!--licence type-->
-            <TextBox  x:Name="TxtLicenceType"
-                      Grid.Row="2"
-                      materialDesign:HintAssist.Hint="Licence Type"
-                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                      VerticalAlignment="Center" 
-                      FontSize="15" 
-                      Width="290"
-                      Margin="0,0,15,0"
-                      Grid.Column="2"
-                      IsReadOnly="True"
-                      Text="{Binding Lictype}"/>
 
             <!--licence expiredate-->
             <DatePicker x:Name="TxtLicenceExpireDate"
@@ -100,31 +87,31 @@
                         materialDesign:HintAssist.Hint="Licence Expire Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.ColumnSpan="1"
-                        Margin="15,0,0,0"
+                        Margin="0"
                         Text="{Binding Licexdate}"/>
 
             <!--NIC-->
             <TextBox  x:Name="TxtNIC"
-                      Grid.Row="3"
+                      Grid.Row="2"
                       materialDesign:HintAssist.Hint="NIC"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="0,0,15,0" 
+                      Margin="0" 
                       Grid.Column="2"
                       IsReadOnly="True"
                       Text="{Binding Nic}"/>
 
             <!--Birthdate-->
             <DatePicker x:Name="TxtBirthdate"
-                        Grid.Row="4"
+                        Grid.Row="3"
                         Width="290"
                         FontSize="15"
                         materialDesign:HintAssist.Hint="Birth Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
-                        Grid.ColumnSpan="1"
-                        Margin="15,0,0,0"
+                        Grid.Column="1"
+                        Margin="0"
                         Text="{Binding Bdate}"/>
 
             <!--mobile number-->
@@ -135,8 +122,8 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="0,0,15,0"
-                      Grid.Column="2"
+                      Margin="0"
+                      Grid.Column="0"
                       IsReadOnly="True"
                       MaxLength="12"
                       Text="{Binding Mobileno}"
@@ -149,11 +136,10 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
-                      Width="600"  
+                      Width="615"  
                       Grid.ColumnSpan="2"
                       IsReadOnly="True"
-                      Text="{Binding Address}"/>
- 
+                      Text="{Binding Address}"/> 
 
         </Grid>
 

@@ -28,13 +28,9 @@
                 <RowDefinition Height="20*"/>
                 <!--Address-->
                 <RowDefinition Height="30*"/>
-                <!--Buttons-->
+                <!--Button-->
             </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="375*"/>
-                <ColumnDefinition Width="375*"/>
-            </Grid.ColumnDefinitions>
 
             <!--Title-->
             <TextBlock Text="Update Customer Details"
@@ -43,7 +39,6 @@
                        Foreground="#FF062044" 
                        VerticalAlignment="Top" 
                        HorizontalAlignment="Center" 
-                       Grid.ColumnSpan="2"
                        Margin="0,50,0,0"/>
 
             <!--First Name-->
@@ -52,9 +47,9 @@
                       materialDesign:HintAssist.Hint="First Name"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center"
-                      Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Fname, Mode=TwoWay}"/>
 
 
             <!--Last Name-->
@@ -63,9 +58,9 @@
                       materialDesign:HintAssist.Hint="Last Name"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
-                      Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Lname, Mode=TwoWay}"/>
 
 
             <!--NIC-->
@@ -74,9 +69,9 @@
                       materialDesign:HintAssist.Hint="NIC"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
-                      Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Nic, Mode=TwoWay}"/>
 
 
             <!--Mobile Number-->
@@ -87,9 +82,9 @@
                      VerticalAlignment="Center"
                      FontSize="15"
                      Grid.Row="4"
-                     Grid.ColumnSpan="2"
                      MaxLength="12"
-                     materialDesign:TransitionAssist.DisableTransitions="True" />
+                     materialDesign:TransitionAssist.DisableTransitions="True"
+                     Text="{Binding Mobileno, Mode=TwoWay}"/>
 
 
 
@@ -99,9 +94,9 @@
                       materialDesign:HintAssist.Hint="Address"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
-                      Grid.ColumnSpan="2"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Address, Mode=TwoWay}"/>
 
 
             <!--Save Changes Button-->
@@ -111,18 +106,17 @@
                     Width="200"
                     Grid.Column="0"
                     VerticalAlignment="Center"
-                    Margin="104,0,19,0"
+                    Margin="106,0,340,0"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
-                    Grid.Row="6"/>
+                    Grid.Row="6" Click="btnSaveChanges_Click"/>
 
             <!--Deactivate Button-->
             <Button x:Name="btnDeactivate"
                     Style="{StaticResource MaterialDesignFlatLightBgButton}"
                     Content="Deactivate"
                     Width="200"
-                    Grid.Column="1"
                     VerticalAlignment="Center"
-                    Margin="19,0,104,0"
+                    Margin="321,0,125,0"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
                     Grid.Row="6"/>
 

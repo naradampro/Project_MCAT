@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Title-->
-            <TextBlock Text="Update Driver Details"
+            <TextBlock Text="Add New Driver"
                                    FontSize="20"
                                    FontWeight="Medium"
                                    Foreground="#FF062044" 
@@ -48,8 +48,9 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="15,0,0,0"
-                      Grid.ColumnSpan="1"/>
+                      Margin="0"
+                      Grid.ColumnSpan="1"
+                      Text="{Binding Fname,Mode=TwoWay}"/>
 
             <!--last name-->
             <TextBox  x:Name="TxtLastName"
@@ -59,8 +60,9 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="0,0,15,0"
-                      Grid.Column="2"/>
+                      Margin="0"
+                      Grid.Column="2"
+                      Text="{Binding Lname,Mode=TwoWay}"/>
 
             <!--licence id-->
             <TextBox  x:Name="TxtLicenceId"
@@ -70,74 +72,70 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="15,0,0,0" 
-                      Grid.ColumnSpan="1"/>
+                      Margin="0" 
+                      Grid.ColumnSpan="1"
+                      Text="{Binding Lid,Mode=TwoWay}"/>
 
             <!--licence type-->
-            <TextBox  x:Name="TxtLicenceType"
-                      Grid.Row="2"
-                      materialDesign:HintAssist.Hint="Licence Type"
-                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                      VerticalAlignment="Center" 
-                      FontSize="15" 
-                      Width="290"
-                      Margin="0,0,15,0"
-                      Grid.Column="2"/>
 
             <!--licence expiredate-->
             <DatePicker x:Name="TxtLicenceExpireDate"
                         Grid.Row="3"
                         Width="290"
                         FontSize="15"
-                        materialDesign:HintAssist.Hint="Licence Expire Date"
+                        materialDesign:HintAssist.Hint="Birth Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.ColumnSpan="1"
-                        Margin="15,0,0,0"/>
+                        Margin="0"
+                        Text="{Binding Licexdate,Mode=TwoWay}"/>
 
             <!--NIC-->
             <TextBox  x:Name="TxtNIC"
-                      Grid.Row="3"
+                      Grid.Row="2"
                       materialDesign:HintAssist.Hint="NIC"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="0,0,15,0" 
-                      Grid.Column="2"/>
+                      Margin="0" 
+                      Grid.Column="2"
+                      Text="{Binding Nic,Mode=TwoWay}"/>
 
             <!--age-->
-            <TextBox  x:Name="TxtAge"
-                      Grid.Row="4"
-                      materialDesign:HintAssist.Hint="Age"
-                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                      VerticalAlignment="Center" 
-                      FontSize="15" 
-                      Width="290"
-                      Margin="15,0,0,0" 
-                      Grid.ColumnSpan="1"/>
+            <DatePicker x:Name="TxtBDate"
+                        Grid.Row="3"
+                        Width="290"
+                        FontSize="15"
+                        materialDesign:HintAssist.Hint="Licence Expire Date"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
+                        Grid.Column="1"
+                        Margin="0"
+                        Text="{Binding Bdate,Mode=TwoWay}"/>
 
             <!--mobile number-->
             <TextBox  x:Name="TxtMobileNumber"
-                      Grid.Row="4"
+                      Grid.Row="5"
                       materialDesign:HintAssist.Hint="Mobile Number"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="290"
-                      Margin="0,0,15,0"
-                      Grid.Column="2"
+                      Margin="0"
+                      Grid.Column="0"
                       MaxLength="12"
-                      materialDesign:TransitionAssist.DisableTransitions="True"/>
+                      materialDesign:TransitionAssist.DisableTransitions="True"
+                      Text="{Binding Mobileno,Mode=TwoWay}"/>
 
             <!--address-->
             <TextBox  x:Name="TxtAddress"
-                      Grid.Row="5"
+                      Grid.Row="4"
                       materialDesign:HintAssist.Hint="Address"
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
-                      Width="600"  
-                      Grid.ColumnSpan="2"/>
+                      Width="615"  
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Address,Mode=TwoWay}"/>
 
             <!--save changes button-->
             <Button x:Name="btnSaveChanges"
@@ -148,7 +146,7 @@
                     Grid.Row="6"
                     Grid.ColumnSpan="1"
                     Margin="104,0,19,0"
-                    VerticalAlignment="Center"/>
+                    VerticalAlignment="Center" Click="btnSaveChanges_Click"/>
 
             <!--deactivate button-->
             <Button x:Name="btnDeactivate"

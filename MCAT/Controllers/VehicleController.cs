@@ -86,11 +86,10 @@ namespace MCAT.Controllers
         /// Updates a given column
         /// </summary>
         /// <param name="vehicle"></param>
-        /// <param name="ColumnName"></param>
         /// <returns></returns>
-        public bool Update(Vehicle vehicle, string ColumnName)
+        public bool Update(Vehicle vehicle)
         {
-            string sqlquery = "UPDATE " + table + " SET " + ColumnName + "=@" + ColumnName + " Where Id=@Id";
+            string sqlquery = @"UPDATE vehicle SET did = "+vehicle.Driver.Id+", Vregno = @Vregno, Model = @Model, FuelType = @FuelType, Lsdate = @Lsdate, Nsdate = @Nsdate, Acstatus = @Acstatus, catid = "+vehicle.Category.Id+", Description = @Description WHERE Id = @Id";
             var count = DBController.connect().Execute(sqlquery, vehicle);
             return count > 0;
         }

@@ -68,5 +68,10 @@ namespace MCAT.UIs
             }
 
         }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new Drivers();
+        }
     }
 }

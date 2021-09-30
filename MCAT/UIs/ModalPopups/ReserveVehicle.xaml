@@ -57,7 +57,7 @@
                           materialDesign:ComboBoxAssist.ShowSelectedItem="{Binding ElementName=DisplaySelectedItemCheckBox, Path=IsChecked}">
                 </ComboBox>
             </StackPanel>
-            
+
             <!--Data Grid-->
             <DataGrid x:Name="ResultGrid" Grid.ColumnSpan="3" Grid.Row="1" IsReadOnly="True" CanUserAddRows="False"
                   ColumnHeaderHeight="40" HeadersVisibility="Column"
@@ -73,8 +73,19 @@
                     HorizontalAlignment="Right"
                     IsEnabled="True"
                     Click="OpenBookVehicle"/>
-            
+
         </Grid>
+
+        <StackPanel x:Name="entermsg" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="To check for available vehicles."
+            FontSize="20"
+            Foreground="#14213D" HorizontalAlignment="Center"/>
+            <Label Content="Enter the reservation date and search."
+            FontSize="20" HorizontalAlignment="Center"
+            Foreground="#14213D"
+            FontWeight="Bold"/>
+        </StackPanel>
+        
 
 
     </Grid>

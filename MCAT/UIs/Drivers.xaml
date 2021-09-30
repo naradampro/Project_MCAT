@@ -58,6 +58,15 @@
                 <TextBlock Margin="10,0">Update Selected</TextBlock>
             </StackPanel>
         </Button>
+        <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            x:Name="Refresh"
+            Margin="20,50,1110,48"
+            Click="Refresh_Click">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Height="20"/>
+                <TextBlock Margin="10,0" Text="Refresh"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Page>

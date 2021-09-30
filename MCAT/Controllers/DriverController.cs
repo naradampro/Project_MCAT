@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 using MCAT.Entities;
 
@@ -27,9 +25,9 @@ namespace MCAT.Controllers
         {
             try
             {
-                 string valuelist = "@Address,@Mobileno,@Nic,@Fname,@Lname,@Bdate,@Lid,@Lictype,@Licxdate,@Dstatus";
-                 string fieldlist = "`address`, `mobileno`, `nic`, `fname`, `lname`, `bdate`, `lid`, `lictype`, `licxdate`, `dstatus`";
-                 string sqlquery = "INSERT INTO `driver` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
+                string valuelist = "@Address,@Mobileno,@Nic,@Fname,@Lname,@Bdate,@Lid,@Licexdate";
+                 string fieldlist = "`address`, `mobileno`, `nic`, `fname`, `lname`, `bdate`, `lid`, `licexdate`";
+                 string sqlquery = "INSERT INTO `driver` ("+fieldlist+") VALUES("+valuelist+ "); SELECT LAST_INSERT_ID()";
                  var returnId = DBController.connect().Query<int>(sqlquery, driver).SingleOrDefault();
                  driver.Id = returnId;
             }
@@ -68,11 +66,10 @@ namespace MCAT.Controllers
         /// Updates a given column
         /// </summary>
         /// <param name="driver"></param>
-        /// <param name="ColumnName"></param>
         /// <returns></returns>
-        public bool Update(Driver driver, string ColumnName)
+        public bool Update(Driver driver)
         {
-            string sqlquery = "UPDATE " + table + " SET " + ColumnName + "=@" + ColumnName + " Where Id=@Id";
+            string sqlquery = @"UPDATE driver SET Address = @Address, Mobileno = @Mobileno, Nic = @Nic, Fname = @Fname, Lname = @Lname, Bdate = @Bdate, Lid = @Lid, Licexdate = @Licexdate WHERE Id = @Id";
             var count = DBController.connect().Execute(sqlquery, driver);
             return count > 0;
         }

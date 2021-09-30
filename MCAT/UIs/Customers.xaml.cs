@@ -61,5 +61,10 @@ namespace MCAT.UIs
                 ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
             }
         }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new Customers();
+        }
     }
 }

@@ -72,11 +72,10 @@ namespace MCAT.Controllers
         /// Updates a given column
         /// </summary>
         /// <param name="customer"></param>
-        /// <param name="ColumnName"></param>
         /// <returns></returns>
-        public bool Update(Customer customer, string ColumnName)
+        public bool Update(Customer customer)
         {
-            string sqlquery = "UPDATE "+table+ " SET " + ColumnName + "=@" + ColumnName + " Where Id=@Id";
+            string sqlquery = @"UPDATE customer SET Fname = @Fname, Lname = @Lname, Nic = @Nic, Address = @Address, Mobileno = @Mobileno WHERE Id = @Id";
             var count = DBController.connect().Execute(sqlquery, customer);
             return count > 0;
         }

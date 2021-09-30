@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MCAT.Controllers;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -20,10 +9,27 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class UpdateDriver : Page
     {
+        Entities.Driver driver = new Entities.Driver();
+        DriverController cont = new DriverController();
+
         public UpdateDriver(Entities.Driver driver)
         {
             InitializeComponent();
+            this.driver = driver;
             FormGrid.DataContext = driver;
+        }
+
+        private void btnSaveChanges_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (cont.Update(this.driver))
+            {
+                MessageBox.Show("The Driver Details Successfully Updated.");
+                ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new ViewDriver(this.driver);
+            }
+            else
+            {
+                MessageBox.Show("An Error Occured.");
+            }
         }
     }
 }
