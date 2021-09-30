@@ -33,13 +33,7 @@ namespace MCAT.UIs
             }
 
         }
-
-        private void OpenAddCustomer(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.AddCustomer();
-            ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
-        }
-
+        
         private void OpenViewCustomers(object sender, RoutedEventArgs e)
         {
             Customer customer = (Customer)DataGridCustomers.SelectedItem;

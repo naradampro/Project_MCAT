@@ -25,18 +25,18 @@ namespace MCAT.Controllers
         /// </returns>
         public bool Add(Reservation reservation)
         {
-            try
-            {
-                 string valuelist = "@Cid,@Vid,@Did,@Pickuploc,@Pickupdate,@Pickuptime,@Days,@Distance,@Description,@Rstatus";
-                 string fieldlist = "`cid`, `vid`, `did`, `pickuploc` `pickupdate`, `pickuptime`, `days`, `distance`, `description`, `rstatus`";
-                 string sqlquery = "INSERT INTO `reservation` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
-                 var returnId = DBController.connect().Query<int>(sqlquery, reservation).SingleOrDefault();
-                 reservation.Id = returnId;
-            }
+            /*try
+            {*/
+            string valuelist = reservation.Customer.Id + "," + reservation.Vehicle.Id + ", @Pickuploc,@Pickupdate,@Pickuptime,@Days,@Distance,@Description";
+                string fieldlist = "`cid`, `vid`, `pickuploc`, `pickupdate`, `pickuptime`, `days`, `distance`, `description`";
+                string sqlquery = "INSERT INTO `reservation` (" + fieldlist + ") VALUES(" + valuelist + "); SELECT LAST_INSERT_ID()";
+                int returnId = DBController.connect().Query<int>(sqlquery, reservation).SingleOrDefault();
+                reservation.Id = returnId;
+            /*}
             catch (Exception ex)
             {
                 return false;
-            }
+            }*/
             return true;
         }
 

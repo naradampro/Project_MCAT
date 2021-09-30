@@ -11,7 +11,7 @@
 
     <Grid>
 
-        <Grid Margin="49,12,55,32">
+        <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
 
             <Grid.RowDefinitions>
@@ -48,7 +48,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center"
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Fname, Mode=TwoWay}"/>
 
 
             <!--Last Name-->
@@ -58,7 +59,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Lname, Mode=TwoWay}"/>
 
 
             <!--NIC-->
@@ -68,7 +70,8 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Nic, Mode=TwoWay}"/>
 
 
             <!--Mobile Number-->
@@ -80,7 +83,8 @@
                      FontSize="15"
                      Grid.Row="4"
                      MaxLength="12"
-                     materialDesign:TransitionAssist.DisableTransitions="True" />
+                     materialDesign:TransitionAssist.DisableTransitions="True"
+                     Text="{Binding Mobileno, Mode=TwoWay}"/>
 
 
 
@@ -91,15 +95,16 @@
                       Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                       VerticalAlignment="Center" 
                       FontSize="15" 
-                      Width="600"/>
+                      Width="600"
+                      Text="{Binding Address, Mode=TwoWay}"/>
 
 
             <!--Button-->
-            <Button x:Name="btnAddCustomer"
-                    Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                    Content="Add Customer"
+            <Button x:Name="btnRegCustomer"
+                    Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                    Content="Register the customer"
                     Width="200"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+                    Click="btnRegCustomer_Click"
                     Grid.Row="6"/>
 
 

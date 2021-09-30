@@ -40,15 +40,15 @@
         </StackPanel>
 
         <!--Button Next-->
-        <Button x:Name="btnNext"
+        <Button x:Name="btnCountinue"
                     Style="{StaticResource MaterialDesignFlatLightBgButton}"
-                    Content="Next"
-                    IsEnabled="False"
+                    Content="Countinue with this customer"
                     Grid.Row="2"
-                    Width="100"
                     HorizontalAlignment="Right" 
-                    VerticalAlignment="Center"
-                    Margin="0,0,60,50"/>
+                    VerticalAlignment="Top"
+                    Margin="0,24,41,0"
+                    Visibility="Hidden"
+                    Click="btnCountinue_Click"/>
 
         <StackPanel x:Name="Notfound" Orientation="Vertical" Grid.Row="1" Margin="0,80" Visibility="Hidden">
             <Label Content="Customer you are looking for is not registered."

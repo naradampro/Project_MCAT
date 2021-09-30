@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Controls;
+using MCAT.Entities;
+using MCAT.Controllers;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -20,9 +10,28 @@ namespace MCAT.UIs.ModalPopups
     /// </summary>
     public partial class AddReservation : Page
     {
-        public AddReservation()
+        Reservation reservation = new Reservation();
+        ReservationController cont = new ReservationController();
+
+        public AddReservation(Customer customer, Vehicle vehicle)
         {
             InitializeComponent();
+            this.reservation.Customer = customer;
+            this.reservation.Vehicle = vehicle;
+            FormGrid.DataContext = this.reservation;
+        }
+
+        private void btnAddResetrvation_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (cont.Add(this.reservation))
+            {
+                MessageBox.Show("Your Reservation is successfully created.");
+                ((MainWindow)Application.Current.MainWindow).PageView.Content = new ViewReservation(this.reservation);
+            }
+            else
+            {
+                MessageBox.Show("En error occurred. Please try agaain.");
+            }
         }
     }
 }

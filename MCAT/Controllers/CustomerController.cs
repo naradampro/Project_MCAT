@@ -25,9 +25,9 @@ namespace MCAT.Controllers
         {
             try
             {
-                string valuelist = "@Fname,@Lname,@Nic,@Address,@Mobileno,@Cstatus";
-                string fieldlist = "`fname`, `lname`, `nic`, `address`, `mobileno`,'cstatus'";
-                string sqlquery = "INSERT INTO `customer` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
+                string valuelist = "@Fname,@Lname,@Nic,@Address,@Mobileno";
+                string fieldlist = "`fname`, `lname`, `nic`, `address`, `mobileno`";
+                string sqlquery = "INSERT INTO `customer` (" + fieldlist + ") VALUES(" + valuelist + "); SELECT LAST_INSERT_ID()";
                 var returnId = DBController.connect().Query<int>(sqlquery, customer).SingleOrDefault();
                 customer.Id = returnId;
             }

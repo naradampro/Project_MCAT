@@ -11,7 +11,7 @@
 
     <Grid Background="White">
 
-        <Grid Margin="49,12,55,32">
+        <Grid Margin="49,12,55,32" x:Name="FormGrid">
 
 
             <Grid.RowDefinitions>
@@ -48,7 +48,8 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600" 
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Pickuploc, Mode=TwoWay}"/>
 
             <!--pick date-->
             <DatePicker x:Name="TxtDate"
@@ -58,17 +59,20 @@
                         materialDesign:HintAssist.Hint="Pick Date"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.ColumnSpan="1"
-                        Margin="15,0,0,0"/>
+                        Margin="15,0,0,0"
+                        Text="{Binding Pickupdate, Mode=TwoWay}"/>
 
             <!--pick time-->
             <materialDesign:TimePicker x:Name="TxtTime"
                                        Width="290" 
                                        FontSize="15"
                                        Style="{StaticResource MaterialDesignFloatingHintTimePicker}"
+                                       Is24Hours="True" SelectedTimeFormat="Long"
                                        materialDesign:HintAssist.Hint="Pick Time" 
                                        Grid.Row="2"
                                        Grid.Column="2"
-                                       Margin="0,0,15,0"/>
+                                       Margin="0,0,15,0"
+                                       Text="{Binding Pickuptime, Mode=TwoWay}"/>
 
             <!--total distance-->
             <TextBox  x:Name="TxtTotalDis"
@@ -78,7 +82,8 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Distance, Mode=TwoWay}"/>
 
             <!--number of days-->
             <TextBox  x:Name="TxtNoDays"
@@ -88,7 +93,8 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Days, Mode=TwoWay}"/>
 
             <!--description-->
             <TextBox  x:Name="TxtDescription"
@@ -98,16 +104,18 @@
                       VerticalAlignment="Center" 
                       FontSize="15" 
                       Width="600"
-                      Grid.ColumnSpan="2"/> 
+                      Grid.ColumnSpan="2"
+                      Text="{Binding Description, Mode=TwoWay}"/> 
 
             <!--create reservation reservation-->
-            <Button x:Name="btnCreateRes"
-                    Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            <Button x:Name="btnAddResetrvation"
+                    Style="{StaticResource MaterialDesignFlatAccentBgButton}"
                     Content="Create Reservation"
                     Width="200"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
                     Grid.Row="6"
-                    Grid.ColumnSpan="2"/>
+                    Grid.ColumnSpan="2"
+                    Click="btnAddResetrvation_Click"/>
 
 
         </Grid>

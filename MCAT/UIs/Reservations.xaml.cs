@@ -30,13 +30,7 @@ namespace MCAT.UIs
                 DataGridReservations.Items.Add(record);
             }
         }
-
-        private void OpenAddReservation(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)Application.Current.MainWindow).FramePopup.Content = new UIs.ModalPopups.AddReservation();
-            ((MainWindow)Application.Current.MainWindow).modalviwer.IsOpen = true;
-        }
-
+        
         private void OpenViewReservation(object sender, RoutedEventArgs e)
         {
             Entities.Reservation reservation = (Entities.Reservation)DataGridReservations.SelectedItem;

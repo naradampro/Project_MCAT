@@ -28,18 +28,9 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
-                Margin="1015,50,20,50"
-                Width="200"
-                Click="OpenAddCustomer">
-            <StackPanel Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Plus" Height="20"/>
-                <TextBlock Margin="10,0">Add a new customer</TextBlock>
-            </StackPanel>
-        </Button>
         
         <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
-            Margin="820,50,240,50"
+            Margin="1015,50,20,50"
             Width="200"
             Click="OpenViewCustomers">
             <StackPanel Orientation="Horizontal">
@@ -49,7 +40,7 @@
         </Button>
 
         <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}"
-            Margin="610,50,443,48"
+            Margin="820,50,240,50"
             Width="200"
             Click="OpenUpdateCustomer">
             <StackPanel Orientation="Horizontal">

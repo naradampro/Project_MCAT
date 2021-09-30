@@ -27,13 +27,13 @@ namespace MCAT.Controllers
         {
             try
             {
-                string valuelist = "@Vregno,@Fueltype,@Lsdate,Nsdate,Acstatus,@Catid,@Description,@Vstatus";
-                 string fieldlist = "`vregno`, `fueltype`, `lsdate`, `nsdate`, `acstatus`,`catid`,`description`,`vstatus`";
-                 string sqlquery = "INSERT INTO `vehicle` ("+fieldlist+") VALUES("+valuelist+"); SELECT CAST(SCOPE_IDENTITY() as int)";
+                string valuelist = vehicle.Driver.Id+",@Vregno,@Model,@FuelType,@Lsdate,@Nsdate,@Acstatus,"+vehicle.Category.Id+",@Description";
+                 string fieldlist = "`did`, `vregno`,`model`, `fueltype`, `lsdate`, `nsdate`, `acstatus`,`catid`,`description`";
+                 string sqlquery = "INSERT INTO `vehicle` ("+fieldlist+") VALUES("+valuelist+ "); SELECT LAST_INSERT_ID()";
                  var returnId = DBController.connect().Query<int>(sqlquery, vehicle).SingleOrDefault();
                  vehicle.Id = returnId;
-            }
-            catch (Exception ex)
+             }
+            catch (MySql.Data.MySqlClient.MySqlException)
             {
                 return false;
             }
@@ -72,8 +72,13 @@ namespace MCAT.Controllers
 
         public List<Vehicle> GetAvaialableonDate(DateTime date)
         {
-            string sqlquery = "SELECT* FROM vehicle WHERE id NOT IN(SELECT vid from reservation WHERE pickupdate = '" + date.ToString("yyyy-MM-dd") + "')";
-            return DBController.connect().Query<Vehicle>(sqlquery).ToList();
+            string sqlquery = "SELECT* FROM vehicle v INNER JOIN vcategory cat ON v.catid = cat.id INNER JOIN driver d ON v.did = d.id WHERE v.id NOT IN(SELECT r.vid from reservation r WHERE pickupdate = '" + date.ToString("yyyy-MM-dd") + "')";
+            return DBController.connect().Query<Vehicle, VCategory, Driver, Vehicle>(sqlquery,
+                (vehic, vcat, driv) => {
+                    vehic.Category = vcat;
+                    vehic.Driver = driv;
+                    return vehic;
+                }, splitOn: "id,id").ToList();
         }
 
 
