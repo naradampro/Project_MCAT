@@ -2,6 +2,7 @@
 using MCAT.Entities;
 using MCAT.Controllers;
 using System.Windows;
+using System;
 
 namespace MCAT.UIs.ModalPopups
 {
@@ -12,13 +13,14 @@ namespace MCAT.UIs.ModalPopups
     {
         Customer customer = new Customer();
         Vehicle vehicle = new Vehicle();
-
+        DateTime rdate;
         CustomerController cont = new CustomerController();
 
-        public AddCustomer(Vehicle vehicle)
+        public AddCustomer(Vehicle vehicle, DateTime rdate)
         {
             InitializeComponent();
             this.vehicle = vehicle;
+            this.rdate = rdate;
             FormGrid.DataContext = this.customer;
         }
 
@@ -27,7 +29,7 @@ namespace MCAT.UIs.ModalPopups
             if (cont.Add(this.customer))
             {
                 MessageBox.Show("Done");
-                ((MainWindow)Application.Current.MainWindow).PageView.Content = new AddReservation(this.customer,this.vehicle);
+                ((MainWindow)Application.Current.MainWindow).PageView.Content = new AddReservation(this.customer,this.vehicle, this.rdate);
             }
             else
             {

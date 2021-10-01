@@ -60,7 +60,8 @@
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
                         Grid.ColumnSpan="1"
                         Margin="15,0,0,0"
-                        Text="{Binding Pickupdate, Mode=TwoWay}"/>
+                        IsEnabled="False"
+                        Text="{Binding Pickupdate, Mode=Oneway}"/>
 
             <!--pick time-->
             <materialDesign:TimePicker x:Name="TxtTime"

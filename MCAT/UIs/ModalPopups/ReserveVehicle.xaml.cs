@@ -23,6 +23,7 @@ namespace MCAT.UIs.ModalPopups
     {
         VCategoryController cat = new VCategoryController();
         VehicleController vcont = new VehicleController();
+        DateTime date; 
         public ReserveVehicle()
         {
             InitializeComponent();
@@ -35,7 +36,8 @@ namespace MCAT.UIs.ModalPopups
         {
             try
             {
-                DateTime date = (DateTime)Pickerdate.SelectedDate;
+                DateTime sdate = (DateTime)Pickerdate.SelectedDate;
+                this.date = sdate;
                 entermsg.Visibility = Visibility.Hidden;
                 ResultGrid.Visibility = Visibility.Visible;
                 btnNext.Visibility = Visibility.Visible;
@@ -56,7 +58,7 @@ namespace MCAT.UIs.ModalPopups
             }
             else
             {
-                ((MainWindow)Application.Current.MainWindow).PageView.Content = new SearchCustomer(vehicle);
+                ((MainWindow)Application.Current.MainWindow).PageView.Content = new SearchCustomer(vehicle, this.date);
             }
 
         }

@@ -14,11 +14,12 @@ namespace MCAT.UIs.ModalPopups
         CustomerController cont = new CustomerController();
         Vehicle vehicle = new Vehicle();
         Customer customer = new Customer();
-
-        public SearchCustomer(Vehicle vehicle)
+        DateTime rdate;
+        public SearchCustomer(Vehicle vehicle,DateTime rdate)
         {
             InitializeComponent();
             this.vehicle = vehicle;
+            this.rdate = rdate;
         }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
@@ -51,12 +52,12 @@ namespace MCAT.UIs.ModalPopups
 
         private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).PageView.Content = new AddCustomer(this.vehicle);
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new AddCustomer(this.vehicle, this.rdate);
         }
 
         private void btnCountinue_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).PageView.Content = new AddReservation(this.customer, this.vehicle);
+            ((MainWindow)Application.Current.MainWindow).PageView.Content = new AddReservation(this.customer, this.vehicle, this.rdate);
         }
     }
 }
