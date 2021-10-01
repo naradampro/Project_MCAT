@@ -11,11 +11,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Asset 2ldpi.png" />
+	  <Compile Remove="UIs\Fonts\**" />
+	  <EmbeddedResource Remove="UIs\Fonts\**" />
+	  <None Remove="UIs\Fonts\**" />
+	  <Page Remove="UIs\Fonts\**" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
-		<Folder Include="UIs\Fonts\" />
+	  <None Remove="Asset 2ldpi.png" />
 	</ItemGroup>
 
 	<ItemGroup>

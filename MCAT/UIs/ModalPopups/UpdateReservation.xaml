@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Title-->
-            <TextBlock Text="Create New Reservation"
+            <TextBlock Text="Update Reservation Details"
                                    FontSize="20"
                                    FontWeight="Medium"
                                    Foreground="#FF062044" 
